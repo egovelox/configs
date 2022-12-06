@@ -1,0 +1,8 @@
+# set up alacritty shell
+shell:
+  program: /usr/local/bin/fish
+  args: 
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
