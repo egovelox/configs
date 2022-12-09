@@ -48,12 +48,37 @@ return packer.startup(function(use)
   use "junegunn/fzf"
   use "junegunn/fzf.vim" -- FZF embedded in vim
   use "kassio/neoterm"
+  use "machakann/vim-highlightedyank"
+  use "airblade/vim-rooter"
   use {
     'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
+    requires = { 'nvim-tree/nvim-web-devicons' },
   }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true } -- Have a light configureable bottom bar
+  }
+  use 'nvim-treesitter/nvim-treesitter'
+  use {
+    "nvim-telescope/telescope.nvim", tag = '0.1.0',
+    requires = {                                               
+        {'nvim-lua/popup.nvim'},                                 
+        {'nvim-lua/plenary.nvim'},                               
+        {'nvim-telescope/telescope-fzf-native.nvim', run="make"},
+        {"nvim-telescope/telescope-live-grep-args.nvim"},
+        {'nvim-telescope/telescope-symbols.nvim'},               
+    },    
+    config = function()
+      require("telescope").load_extension("fzf")
+      require("telescope").load_extension("live_grep_args")
+    end
+  }
+
+
+
+
+
+
 
   -- Automatically setup your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
