@@ -31,6 +31,16 @@ imap('<down>', '<nop>')
 imap('<left>', '<nop>')
 imap('<right>', '<nop>')
 
+-- Scroll faster between paragraphs
+nmap('J', '}')
+nmap('K', '{')
+
+-- Search word under cursor
+nmap('<Leader>n', '*')
+
+-- Copy current file path into clipboard
+nmap('<Leader>fp', ':let @+ = expand("%:p")<CR>')
+
 -- Left and right can switch buffers
 nmap('<left>', ':bp<CR>')
 nmap('<right>', ':bn<CR>')
@@ -38,14 +48,6 @@ nmap('<right>', ':bn<CR>')
 
 -- mappings for nvim-tree
 nmap("<Leader><BS>", ':NvimTreeToggle<CR>')
-
--- mappings for Telescope
-nmap('<Leader>o', ':Telescope oldfiles hidden=true<CR>')
-nmap('<Leader>i', ':Telescope live_grep hidden=true<CR>')
-
--- TODO : use vimux
-vim.api.nvim_create_autocmd("BufEnter", { command = "if &buftype == 'terminal' | :startinsert | endif" }) 
-
 
 
 -- Switch split (or create) with C-h,j,k,l
@@ -55,17 +57,41 @@ nmap("<C-k>", "<Plug>WinMoveUp")
 nmap("<C-l>", "<Plug>WinMoveRight")
 
 
+-- Zoom a split
+nmap("<Leader>zi", ":tabnew %<CR>")
+nmap("<Leader>zo", ":tabclose<CR>")
+
 -- Start or end of line
 nmap('L', '$')
+vmap('L', '$')
 nmap('H', '^')
+vmap('H', '^')
 
 
+-- mapping to enter vim-floaterm
+nmap('<Leader>=', ":FloatermToggle<CR>")
+-- same mapping to exit vim-floatterm
+vim.cmd[[ tnoremap <silent> <Leader>=   <C-\><C-n>:FloatermToggle<CR> ]]
+
+
+-- mappings for Telescope
+-- see other mappings in init.lua
+nmap('<Leader>o', ':Telescope oldfiles hidden=true<CR>')
+nmap('<Leader>i', ':Telescope live_grep hidden=true<CR>')
+nmap('<leader>j',':Telescope jumplist<cr>')
+
+nmap('<leader>gd',':Telescope lsp_definitions<cr>')
+nmap('<leader>gr',':Telescope lsp_references<cr>')
+
+-- Since fzf is in terminal mode, do not use the standard mapping for Esc
+vim.api.nvim_create_autocmd("FileType", { pattern = "fzf", command = [[tnoremap <Esc> <C-c>]] })
+vim.api.nvim_create_autocmd("BufLeave", { command = [[tnoremap <Esc> <C-\><C-n>]] })
 -- mappings for triggering FZF vim plugin
 -- think l as list
 -- and  . .
 --       .
 --
--- lst files
+-- List files
 nmap('<Leader>l', ':Files<CR>')
 -- List files with .gitignore
 nmap('<Leader>;', ':GFiles<CR>')
@@ -73,32 +99,14 @@ nmap('<Leader>;', ':GFiles<CR>')
 nmap('<Leader>.', ':Buffers<CR>')
 
 
--- <leader><leader> toggles between buffers
-nmap('<leader><leader>', '<C-^>')
-
-
 -- Display nvim commands history with fzf
 nmap("<Leader>'", ':History:<cr>')
 
 
--- TODO : forget neoterm
--- mappings for neoterm
---nmap('<Leader>t', ':Ttoggle<CR><Esc>')
---nmap('<Leader>tg', ':Tclear | T git stt<CR><Esc>')
+-- <leader><leader> toggles between buffers
+nmap('<leader><leader>', '<C-^>')
 
--- TODO : use vimux
--- mappings for navigating between normal and terminal splits
--- In vim the command <C-\><C-N> can be used to go to Normal mode from any other mode.
---nmap('<Leader>i', [[<C-\><C-n><C-w>h]], { noremap = true }) 
---nmap('<Leader>o', [[<C-\><C-n><C-w>j]], { noremap = true }) 
---nmap('<Leader>p', [[<C-\><C-n><C-w>k]], { noremap = true }) 
---nmap('<Leader>[', [[<C-\><C-n><C-w>l]], { noremap = true }) 
---
---tmap('<Esc>', [[<C-\><C-n>]], { noremap = true }) 
---tmap('<Leader>i', [[<C-\><C-n><C-w>h]], { noremap = true }) 
---tmap('<Leader>o', [[<C-\><C-n><C-w>j]], { noremap = true }) 
---tmap('<Leader>p', [[<C-\><C-n><C-w>k]], { noremap = true }) 
---tmap('<Leader>[', [[<C-\><C-n><C-w>l]], { noremap = true }) 
+
 
 -- TODO : use another way 
 -- Ctrl+h to stop searching
@@ -106,18 +114,6 @@ nmap("<Leader>'", ':History:<cr>')
 --nmap('<C-h>', ':nohlsearch<cr>')
 
 
--- to be moved elsewhere
--- TODO : use vimux
-vim.g.neoterm_size = tostring(0.3 * vim.o.columns)
-vim.g.neoterm_fixedsize = 1
-vim.g.neoterm_default_mod = 'botright vertical'
-vim.g.neoterm_autoscroll = 1
--- Enter terminals with insert mode
--- not really needed. Moreover, see g.neoterm_autoinsert = 1
-
--- Since fzf is in terminal mode, do not use the standard mapping for Esc
-vim.api.nvim_create_autocmd("FileType", { pattern = "fzf", command = [[tnoremap <Esc> <C-c>]] })
-vim.api.nvim_create_autocmd("BufLeave", { command = [[tnoremap <Esc> <C-\><C-n>]] })
 
 -- In visual-mode, paste to the clipboard with <C-C>
 -- vim.api.nvim_set_keymap('v', '<C-C>', '"+y', { noremap = true })

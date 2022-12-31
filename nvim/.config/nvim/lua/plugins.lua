@@ -47,18 +47,20 @@ return packer.startup(function(use)
   use "Mofiqul/vscode.nvim" -- A colorscheme inspired by vscode original dark theme
   use "junegunn/fzf"
   use "junegunn/fzf.vim" -- FZF embedded in vim
-  use "kassio/neoterm"
+  use 'voldikss/vim-floaterm'
   use "machakann/vim-highlightedyank"
   use "airblade/vim-rooter"
   use {
     'nvim-tree/nvim-tree.lua',
     requires = { 'nvim-tree/nvim-web-devicons' },
   }
+  use 'arkav/lualine-lsp-progress'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true } -- Have a light configureable bottom bar
   }
-  use 'nvim-treesitter/nvim-treesitter'
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
   use {
     "nvim-telescope/telescope.nvim", tag = '0.1.0',
     requires = {                                               
@@ -73,8 +75,27 @@ return packer.startup(function(use)
       require("telescope").load_extension("live_grep_args")
     end
   }
-
-
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+  use 'simrat39/rust-tools.nvim'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+  use "stevearc/dressing.nvim"
+  use({
+    "ziontee113/icon-picker.nvim",
+    config = function()
+      require("icon-picker").setup({
+        disable_legacy_commands = true
+      })
+    end,
+  })
 
 
 

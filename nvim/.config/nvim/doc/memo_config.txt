@@ -1,0 +1,60 @@
+memo_config.txt    A Memo of your config
+
+
+==============================================================================
+MEMO CONFIG                                                 *memo_config*
+
+
+==============================================================================
+MEMO LEADER                                                 *memo_leader*
+
+<Leader><Leader>    Alternate Buffer
+<Leader>=   Toggle terminal popup. But prefer using tmux <C-a>- OR <C-a>|
+
+<Leader>o   [Telescope] recently open files
+<Leader>i   [Telescope] livegrep files
+<Leader>j   [Telescope] jumplist
+
+<Leader>'   [FZF] command history
+<Leader>;   [FZF] git files
+<Leader>l   [FZF] all files
+<Leader>.   [FZF] opened buffers
+
+<Leader>gd  [Telescope] lsp definitions
+<Leader>gr  [Telescope] lsp references
+
+<Leader>e   [LSP] Open diagnostic
+<Leader>q   [LSP] Close diagnostic
+
+<Leader>n   [Search] for next occurence of the word under the cursor (cycling)
+<Leader>fp  [Copy] Copy current file path into clipboard
+
+==============================================================================
+MEMO CTRL                                                 *memo_ctrl*
+
+<Ctrl-o>    [Jump] jump to previous position
+<Ctrl-i>    [Jump] jump to next position
+
+<Ctrl-s>    [Telescope] open file in vim-tree
+<Ctrl-e>    [CMP] During edit mode, quit completions
+
+<Ctrl-space>    [CMP] During edit mode, suggest completions
+
+
+==============================================================================
+MEMO VARIA                                                 *memo_varia*
+
+I           [NvimTree] Normal mode, toggle .gitignore files
+H           [NvimTree] Normal mode, toggle dotfiles
+
+
+==============================================================================
+MEMO TODO                                                 *memo_todo*
+
+
+
+
+
+
+vim:tw=78:ts=8:ft=help:norl:
+

@@ -15,3 +15,5 @@ function append-to-path --description 'Adds the given directory to the end of th
     end
 
 end
+
+

@@ -7,6 +7,5 @@
 # abbr --query WORD ...
 
 abbr -a -U -- cls clear
-abbr -a -U -- dev "cd $HOME/DEV"
 abbr -a -U -- gco 'git checkout'
 

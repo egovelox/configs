@@ -1,0 +1,42 @@
+# general settings
+datetime-format "%D, %R"
+suppress-first-reload yes
+reload-time 1
+reload-threads 3
+auto-reload yes
+max-items 100
+notify-always no
+notify-program "~/.config/newsboat/h_jenkins/newsboat_notifier.sh"
+browser "/Applications/Firefox.app/Contents/MacOS/firefox --new-tab %u"
+
+color background          white   black
+color listnormal          white   black
+color listfocus           white  black   bold
+color listnormal_unread   magenta black
+color listfocus_unread    magenta black   bold
+color title               yellow  black   bold
+color info                yellow  black   bold
+color hint-key            yellow  black   bold
+color hint-keys-delimiter yellow  white
+color hint-separator      yellow  black  bold
+color hint-description    yellow  black
+color article             white   black
+
+# unbind keys
+unbind-key ENTER
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+
+# bind keys - vim style
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+
+# Change macro prefix (default ,)
+#bind-key + macro-prefix
+#unbind-key ,
+
+
