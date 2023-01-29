@@ -32,7 +32,7 @@ vim.cmd [[set clipboard=unnamedplus]]
 vim.o.termguicolors = true
 
 
-vim.o.foldcolumn = '3' -- '1' will show bars (thanks to ufo plugin)
+vim.o.foldcolumn = '1' -- '1' will show bars (thanks to ufo plugin)
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true

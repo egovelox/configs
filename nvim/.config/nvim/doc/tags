@@ -1,5 +1,6 @@
 memo_config	memo_config.txt	/*memo_config*
 memo_ctrl	memo_config.txt	/*memo_ctrl*
 memo_leader	memo_config.txt	/*memo_leader*
+memo_tmux	memo_config.txt	/*memo_tmux*
 memo_todo	memo_config.txt	/*memo_todo*
 memo_varia	memo_config.txt	/*memo_varia*

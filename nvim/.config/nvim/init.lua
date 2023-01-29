@@ -1,4 +1,12 @@
 --[[----------------------------------------
+BEFORE
+--]]----------------------------------------
+-- From nvim-tree docs :
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+--[[----------------------------------------
 IMPORTS
 --]]----------------------------------------
 
@@ -9,7 +17,7 @@ require('mappings')
 local fn = vim.fn
 
 --[[----------------------------------------
-vscode-theme
+VSCODE-THEME
 --]]----------------------------------------
 local c = require('vscode.colors').get_colors()
 
@@ -18,7 +26,9 @@ require('vscode').setup({
   color_overrides = {
     vscBack = '#1d1f21',
     -- dim default lightBlue #9CDCFE
-    vscLightBlue = '#647eb5'
+    vscLightBlue = '#647eb5',
+    -- dim default lightGreen #B5CEA8
+    vscBlueGreen = '#6f8f88',
   },
   group_overrides = {
     NvimTreeNormal = { fg='#A9B53F', bg = 'NONE' },
@@ -28,8 +38,28 @@ require('vscode').setup({
   }
 })
 
+vim.api.nvim_set_hl(0, 'Pmenu', { bg='#1d1f21' })
+vim.api.nvim_set_hl(0, 'DiagnosticError', { fg=c.vscGray })
+vim.api.nvim_set_hl(0, 'DiagnosticInfo', { fg=c.vscGray })
+vim.api.nvim_set_hl(0, 'DiagnosticWarn', { fg=c.vscGray })
+vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg=c.vscGray })
+
 --[[----------------------------------------
-icon-picker
+GIT-MESSENGER
+
+<leader>gm
+q to quit
+o/O to scroll commits
+d/D to show current diff/whole diff
+
+https://github.com/rhysd/git-messenger.vim
+--]]----------------------------------------
+vim.cmd [[let g:git_messenger_floating_win_opts = { 'border': 'single' }]]
+vim.g.git_messenger_always_into_popup = true
+
+
+--[[----------------------------------------
+ICON-PICKER
 --]]----------------------------------------
 local opts = { noremap = true, silent = true }
 
@@ -38,18 +68,15 @@ vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Ya
 --vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
  
 --[[----------------------------------------
-nvim-tree
+NVIM-TREE
 --]]----------------------------------------
 
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 require("nvim-tree").setup({
 -- nvim-tree will open the folder of the file in current buffer
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_cwd = false,
   },
   diagnostics = {
     enable = true,
@@ -267,7 +294,7 @@ MASON & LSPCONFIG
 --]]----------------------------------------
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = {"sumneko_lua", "tsserver", "rust_analyzer"}
+  ensure_installed = {"sumneko_lua", "tsserver", "rust_analyzer", "jdtls"}
 })
 
 
@@ -279,6 +306,7 @@ MASON & LSPCONFIG
 --vim.cmd[[hi DiagnosticInfo guifg=Blue]]
 --vim.cmd[[hi DiagnosticHint guifg=Green]]
 
+-- DiagnosticSignXXXX is the sign (an icon) that nvim prints on Diagnostic
 fn.sign_define("DiagnosticSignError", { text = "💥", texthl = "DiagnosticSignError" })
 fn.sign_define("DiagnosticSignWarn", { text = "🤨", texthl = "DiagnosticSignWarn" })
 fn.sign_define("DiagnosticSignInformation", { text = "🌤️", texthl = "DiagnosticSignInfo" })
@@ -322,7 +350,7 @@ local on_attach = function(client, bufnr)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', '<Leader>h', vim.lsp.buf.hover, bufopts)
-  -- use telescope
+  -- use telescope instead
   -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
@@ -418,4 +446,3 @@ rt.setup({
     capabilities = capabilities,
   },
 })
-

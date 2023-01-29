@@ -1,5 +1,6 @@
 # to add brew installed packages
 append-to-path /usr/local/bin
+append-to-path $HOME/bin
 
 setup-rust
 append-to-path $CARGO_HOME/bin

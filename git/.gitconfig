@@ -4,3 +4,5 @@
     co = checkout
     branches = branch --all
     cof = !git branch --all | fzf | xargs git checkout
+[core]
+	excludesfile = /Users/maximerichard/.gitignore_global

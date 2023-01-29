@@ -1,2 +1,10 @@
+# macOS files :
 .DS_Store
+
+# eclipse jdtls files :
+.classpath
+.project
+.factorypath
+.settings/
+.apt_generated_tests/
 

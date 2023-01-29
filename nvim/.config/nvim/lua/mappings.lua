@@ -23,6 +23,9 @@ function tmap(shortcut, command)
   map('t', shortcut, command)
 end
 
+-- Open the memo_config help
+nmap('<Leader>mo', ':h memo_config<CR>')
+
 --No arrow keys --- force yourself to use the home row
 nmap('<up>', '<nop>')
 nmap('<down>', '<nop>')
@@ -67,6 +70,8 @@ vmap('L', '$')
 nmap('H', '^')
 vmap('H', '^')
 
+-- mapping for nvim-blame-line
+nmap('<Leader>gb', ":ToggleBlameLine<CR>")
 
 -- mapping to enter vim-floaterm
 nmap('<Leader>=', ":FloatermToggle<CR>")

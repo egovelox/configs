@@ -4,6 +4,10 @@ memo_config.txt    A Memo of your config
 ==============================================================================
 MEMO CONFIG                                                 *memo_config*
 
+After editing
+run :helptags ~/configs/nvim/.config/nvim/doc
+
+Open this help with <Leader>mo
 
 ==============================================================================
 MEMO LEADER                                                 *memo_leader*
@@ -29,6 +33,9 @@ MEMO LEADER                                                 *memo_leader*
 <Leader>n   [Search] for next occurence of the word under the cursor (cycling)
 <Leader>fp  [Copy] Copy current file path into clipboard
 
+<Leader>gm  [Git-messenger] Open floating popup
+<Leader>gb  [Nvim-blame-line] Toggle blame line
+
 ==============================================================================
 MEMO CTRL                                                 *memo_ctrl*
 
@@ -46,6 +53,28 @@ MEMO VARIA                                                 *memo_varia*
 
 I           [NvimTree] Normal mode, toggle .gitignore files
 H           [NvimTree] Normal mode, toggle dotfiles
+
+
+==============================================================================
+MEMO TMUX                                                 *memo_tmux*
+
+Prexix as P
+
+P a     [Window]  switch to last window
+P L     [Session] switch to last session
+P s:new [Session] Create new session
+P $     [Session] Change current session name
+
+P &     [Window] Kill and close
+
+Other keybindings witch Command as C
+
+C T     [Window] New window
+C H,L   [Window] Switch left or right
+C ]     [Window] Vim editing-mode - q to exit
+C A     [Window] Switch window to last used
+C S     [Window] Switch window via fzf
+C K     [Window] Kill window via fzf
 
 
 ==============================================================================

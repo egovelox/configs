@@ -5,9 +5,10 @@ reload-time 1
 reload-threads 3
 auto-reload yes
 max-items 100
-notify-always no
-notify-program "~/.config/newsboat/h_jenkins/newsboat_notifier.sh"
+notify-always yes
+notify-program "~/bin/newsboat_notifier.sh"
 browser "/Applications/Firefox.app/Contents/MacOS/firefox --new-tab %u"
+download-path "~/Downloads/TOR/newsboat"
 
 color background          white   black
 color listnormal          white   black
@@ -39,4 +40,5 @@ bind-key h quit
 #bind-key + macro-prefix
 #unbind-key ,
 
-
+# Running this macro in newsboat, it will open the podcast link directly in vlc !
+macro v set browser "/Applications/VLC.app/Contents/MacOS/VLC %u >/dev/null 2>&1 &"; one; set browser "/Applications/Firefox.app/Contents/MacOS/firefox --new-tab %u"
