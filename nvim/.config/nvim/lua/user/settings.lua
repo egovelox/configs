@@ -19,15 +19,12 @@ vim.o.softtabstop = -1
 
 vim.o.splitbelow = true
 vim.o.splitright = true
-vim.cmd [[set mouse=a]]
+
+vim.opt.mouse = "a"
 
 -- so nice: paste a normal yank into the clipboard
-vim.cmd [[set clipboard=unnamedplus]]
+vim.opt.clipboard = "unnamedplus"  
 
--- Light purple indicating the active buffer
--- Inactive because of lualine
--- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
--- vim.cmd [[hi StatusLine guibg=#5f5f87]]
 
 vim.o.termguicolors = true
 

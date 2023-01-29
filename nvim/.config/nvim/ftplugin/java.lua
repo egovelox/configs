@@ -5,12 +5,8 @@ local config = {
 }
 require('jdtls').start_or_attach(config)
 
---]]
-
-
-vim.opt_local.shiftwidth = 2
-vim.opt_local.tabstop = 2
 vim.opt_local.cmdheight = 2 -- more space in the neovim command line for displaying messages
+--]]
 
 local jdtls = require('jdtls')
 
@@ -18,9 +14,6 @@ local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
   return
 end
---local capabilities = vim.lsp.protocol.make_client_capabilities()
---capabilities.textDocument.completion.completionItem.snippetSupport = false
---capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 
@@ -135,89 +128,3 @@ local config = {
 }
 
 require("jdtls").start_or_attach(config)
---[[
-  
-  settings = {
-    java = {
-      -- jdt = {
-      --   ls = {
-      --     vmargs = "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m"
-      --   }
-      -- },
-      eclipse = {
-        downloadSources = true,
-      },
-      configuration = {
-        updateBuildConfiguration = "interactive",
-      },
-      maven = {
-        downloadSources = true,
-      },
-      implementationsCodeLens = {
-        enabled = true,
-      },
-      referencesCodeLens = {
-        enabled = true,
-      },
-      references = {
-        includeDecompiledSources = true,
-      },
-      inlayHints = {
-        parameterNames = {
-          enabled = "all", -- literals, all, none
-        },
-      },
-      format = {
-        enabled = false,
-        -- settings = {
-        --   profile = "asdf"
-        -- }
-      },
-    },
-    signatureHelp = { enabled = true },
-    completion = {
-      favoriteStaticMembers = {
-        "org.hamcrest.MatcherAssert.assertThat",
-        "org.hamcrest.Matchers.*",
-        "org.hamcrest.CoreMatchers.*",
-        "org.junit.jupiter.api.Assertions.*",
-        "java.util.Objects.requireNonNull",
-        "java.util.Objects.requireNonNullElse",
-        "org.mockito.Mockito.*",
-      },
-    },
-    contentProvider = { preferred = "fernflower" },
-    extendedClientCapabilities = extendedClientCapabilities,
-    sources = {
-      organizeImports = {
-        starThreshold = 9999,
-        staticStarThreshold = 9999,
-      },
-    },
-    codeGeneration = {
-      toString = {
-        template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
-      },
-      useBlocks = true,
-    },
-  },
-
-  -- Language server `initializationOptions`
-  -- You need to extend the `bundles` with paths to jar files
-  -- if you want to use additional eclipse.jdt.ls plugins.
-  --
-  -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
-  --
-  -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
-  init_options = {
-    -- bundles = {},
-    bundles = bundles,
-  },
-}
-
--- This starts a new client & server,
--- or attaches to an existing client & server depending on the `root_dir`.
---
---]]
-
-
