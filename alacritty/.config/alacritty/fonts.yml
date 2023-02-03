@@ -85,7 +85,8 @@ colors:
     #background: '#082222'
     background: '#1d1f21'
     #foreground: '#8d9e41'
-    foreground: '#86acb8'
+    #foreground: '#86acb8'
+    foreground: '#b3e3d9'
     # Bright and dim foreground colors
   #primary:
     #  background: '#1d1f21'

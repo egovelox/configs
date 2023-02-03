@@ -8,17 +8,19 @@ end
 
 local c = require('vscode.colors').get_colors()
 
+local lightBlue = '#5c8296'
+
 require('vscode').setup({
   disable_nvimtree_bg = true,
   color_overrides = {
     vscBack = '#1d1f21',
     -- dim default lightBlue #9CDCFE
-    vscLightBlue = '#647eb5',
+    vscLightBlue = lightBlue,
     -- dim default lightGreen #B5CEA8
     vscBlueGreen = '#6f8f88',
   },
   group_overrides = {
-    NvimTreeNormal = { fg='#A9B53F', bg = 'NONE' },
+    NvimTreeNormal = { fg= lightBlue, bg = 'NONE' },
     NvimTreeFolderName = { fg=c.vscGray, bg = 'NONE' },
     NvimTreeOpenedFolderName = { fg=c.vscViolet, bg = 'NONE' },
     NvimTreeEmptyFolderName = { fg = c.vscFront, bg = 'NONE' }

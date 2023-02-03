@@ -44,25 +44,28 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself (update etc)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used in lots of plugins
-  use "Mofiqul/vscode.nvim" -- A colorscheme inspired by vscode original dark theme
   use "junegunn/fzf"
   use "junegunn/fzf.vim" -- FZF embedded in vim
   use 'voldikss/vim-floaterm'
   use "machakann/vim-highlightedyank"
   use "airblade/vim-rooter"
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-  }
   use 'arkav/lualine-lsp-progress'
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true } -- Have a light configureable bottom bar
-  }
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
+  -- Colorschemes
+  use "Mofiqul/vscode.nvim" -- A colorscheme inspired by vscode original dark theme
+
+  -- Layout plugins
+  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } }
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+
+  -- Treesitter
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
+  -- Telescope
   use {
-    "nvim-telescope/telescope.nvim", tag = '0.1.0',
+    "nvim-telescope/telescope.nvim", 
+    tag = '0.1.0',
     requires = {                                               
         {'nvim-lua/popup.nvim'},                                 
         {'nvim-lua/plenary.nvim'},                               
@@ -75,12 +78,15 @@ return packer.startup(function(use)
       require("telescope").load_extension("live_grep_args")
     end
   }
-  use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  }
+
+  -- LSP
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use "neovim/nvim-lspconfig"
   use 'simrat39/rust-tools.nvim'
+  use 'mfussenegger/nvim-jdtls'
+
+  -- cmp plugins
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -88,6 +94,11 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'stevearc/dressing.nvim'
+
+  -- Git
+  use 'rhysd/git-messenger.vim'
+  use 'tveskag/nvim-blame-line'
+
   use({
     'ziontee113/icon-picker.nvim',
     config = function()
@@ -96,10 +107,6 @@ return packer.startup(function(use)
       })
     end,
   })
-  use 'mfussenegger/nvim-jdtls'
-  use 'rhysd/git-messenger.vim'
-  use 'tveskag/nvim-blame-line'
-
 
 
 
@@ -109,4 +116,5 @@ return packer.startup(function(use)
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
+
 end)

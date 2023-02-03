@@ -54,6 +54,8 @@ MEMO VARIA                                                 *memo_varia*
 I           [NvimTree] Normal mode, toggle .gitignore files
 H           [NvimTree] Normal mode, toggle dotfiles
 
+zn          [Ufo] Open a fold
+zm          [Ufo] Close a fold
 
 ==============================================================================
 MEMO TMUX                                                 *memo_tmux*
