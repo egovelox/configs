@@ -34,6 +34,16 @@ imap('<down>', '<nop>')
 imap('<left>', '<nop>')
 imap('<right>', '<nop>')
 
+-- Switch split (or create) with C-h,j,k,l
+nmap("<left>", "<Plug>WinMoveLeft")
+nmap("<down>", "<Plug>WinMoveDown")
+nmap("<up>", "<Plug>WinMoveUp")
+nmap("<right>", "<Plug>WinMoveRight")
+
+-- Left and right can switch buffers
+-- nmap('<left>', ':bp<CR>')
+-- nmap('<right>', ':bn<CR>')
+
 -- Scroll faster between paragraphs
 nmap('J', '}')
 nmap('K', '{')
@@ -44,20 +54,11 @@ nmap('<Leader>n', '*')
 -- Copy current file path into clipboard
 nmap('<Leader>fp', ':let @+ = expand("%:p")<CR>')
 
--- Left and right can switch buffers
-nmap('<left>', ':bp<CR>')
-nmap('<right>', ':bn<CR>')
-
 
 -- mappings for nvim-tree
 nmap("<Leader><BS>", ':NvimTreeToggle<CR>')
 
 
--- Switch split (or create) with C-h,j,k,l
-nmap("<C-h>", "<Plug>WinMoveLeft")
-nmap("<C-j>", "<Plug>WinMoveDown")
-nmap("<C-k>", "<Plug>WinMoveUp")
-nmap("<C-l>", "<Plug>WinMoveRight")
 
 
 -- Zoom a split

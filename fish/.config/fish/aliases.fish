@@ -19,4 +19,8 @@
   alias fdat='hfactory database connect -i'
   alias flog='hfactory logs preview -m'
 
+  # same as Command + S
   alias ss='tmux list-windows -a | cut -d" " -f1,2 | while read line; echo $line | sed -e "s/: / /" -e "s/+/ /g" ; end | fzf-tmux -p 30% -- --prompt "switch window: " --no-bold --layout=reverse --height 50% --margin 0% --no-separator --no-info --black --color bg+:black,hl:reverse,hl+:reverse,gutter:black | cut -d " " -f1 | xargs tmux switch -t'
+  
+  alias fabs='$HOME/DEV/mdn/ftabswitch/app/switch_tab.sh'
+  alias fabc='$HOME/DEV/mdn/ftabswitch/app/close_tabs.sh'

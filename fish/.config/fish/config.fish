@@ -40,6 +40,9 @@ set -g -x FZF_DEFAULT_OPTS --layout=reverse --height 50% --no-separator --color 
 
 set -g -x NVM_DIR $HOME/.nvm
 
+# would be too long :
+# nvm use current
+
 
 #####################################################
 # GREETING
@@ -50,7 +53,7 @@ set -g -x fish_greeting '🐟'
 
 #####################################################
 # PROMPT
-#####################################################
+####################################################
 
 # for starship
 starship init fish | source
@@ -61,7 +64,8 @@ starship init fish | source
 #####################################################
 
 set -xg LESS "-SRXF"
-
+set -xg BKMR_DB_URL "$HOME/.config/bkmr/bkmr.db"
+set -xg BKMR_FZF_OPTS "--reverse --height 75% --show-tags"
 
 #####################################################
 end

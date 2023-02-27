@@ -28,6 +28,10 @@ key_bindings:
   - { key: K,      mods: Command,       chars: "\x01\x6b"                       }
   # Switch tmux window to last used ( i.e <C-a>a )
   - { key: A,      mods: Command,       chars: "\x01\x61"                       }
+  # Switch firefox tab ( i.e <C-a>f )
+  - { key: E,      mods: Command,       chars: "\x01\x66"                       }
+  # Close firefox tabs ( i.e <C-a>x )
+  - { key: R,      mods: Command,       chars: "\x01\x78"                       }
   - { key: A,         mods: Alt,       chars: "\x1ba"                       }
   - { key: B,         mods: Alt,       chars: "\x1bb"                       }
   - { key: C,         mods: Alt,       chars: "\x1bc"                       }

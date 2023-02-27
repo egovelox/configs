@@ -12,7 +12,8 @@ require('lualine').setup({
     lualine_b = {
       {
       'branch',
-      separator = { right = ''},
+      --separator = { right = ''},
+      separator = { right = ' '},
       color = function(section)
                   return { bg = '#995054', fg= 'black' }
                 end
