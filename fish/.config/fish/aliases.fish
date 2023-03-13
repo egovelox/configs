@@ -28,4 +28,4 @@
   alias tsm="transmission-remote"
   alias tsmd="transmission-daemon"
 
-  alias syncbms="$HOME/bin/sync_bms.sh" 
+  alias syncbkms="$HOME/bin/sync_bkms.sh" 
