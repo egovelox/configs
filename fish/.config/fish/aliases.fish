@@ -24,3 +24,6 @@
   
   alias fabs='$HOME/DEV/mdn/ftabswitch/app/switch_tab.sh'
   alias fabc='$HOME/DEV/mdn/ftabswitch/app/close_tabs.sh'
+
+  alias tsm="transmission-remote"
+  alias tsmd="transmission-daemon"
