@@ -1,0 +1,22 @@
+{
+	"name": "Vimium C",
+	"@time": "5/7/2023, 3:12:36 PM",
+	"time": 1683465156869,
+	"environment": {
+		"extension": "1.99.99",
+		"platform": "mac",
+		"firefox": 109
+	},
+	"exclusionRules": [],
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"# these two bindings take into account the fact that",
+		"# Ctrl-h and Ctrl-l",
+		"# are bound to lefet and right at the system level (karabiner)",
+		"mapKey <left> J",
+		"mapKey <right> K",
+		""
+	],
+	"vimSync": true
+}

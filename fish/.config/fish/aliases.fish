@@ -28,4 +28,6 @@
   alias tsm="transmission-remote"
   alias tsmd="transmission-daemon"
 
+  # need the running firefox extension, code in DEV/mdn/ftabswitch
+  alias importbkms="$HOME/.config/bkms/bin/insert_latest.sh"
   alias syncbkms="$HOME/bin/sync_bkms.sh" 

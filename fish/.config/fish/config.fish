@@ -65,7 +65,7 @@ starship init fish | source
 
 set -xg LESS "-SRXF"
 set -xg BKMR_DB_URL "$HOME/.config/bkms/bkmr.db"
-set -xg BKMR_FZF_OPTS "--reverse --height 75% --show-tags"
+set -xg BKMR_FZF_OPTS "--reverse --height 20% --show-tags"
 
 #####################################################
 end
