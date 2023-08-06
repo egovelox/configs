@@ -6,9 +6,9 @@
 # abbr --list
 # abbr --query WORD ...
 
-abbr -a -U -- cls clear
-abbr -a -U -- gco 'git checkout'
-abbr -a -U -- java11 'jabba use openjdk@1.11.0'
-abbr -a -U -- java17 'jabba use openjdk@1.17.0'
-abbr -a -U -- boo 'bkmr search -o --fzf'
-abbr -a -U -- fslak "$HOME/bin/slack_tracker/slack_tracker.sh"
+abbr -a -- cls clear
+abbr -a -- gco 'git checkout'
+abbr -a -- java11 'jabba use openjdk@1.11.0'
+abbr -a -- java17 'jabba use openjdk@1.17.0'
+abbr -a -- boo 'bkmr search -o --fzf'
+abbr -a -- fslak "$HOME/bin/slack_tracker/slack_tracker.sh"

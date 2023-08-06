@@ -23,6 +23,11 @@ function tmap(shortcut, command)
   map('t', shortcut, command)
 end
 
+nmap('<C-c>', "<Esc>")
+vmap('<C-c>', "<Esc>")
+imap('<C-c>', "<Esc>")
+tmap('<C-c>', "<Esc>")
+
 -- Open the memo_config help
 nmap('<Leader>mo', ':h memo_config<CR>')
 
@@ -35,10 +40,16 @@ imap('<left>', '<nop>')
 imap('<right>', '<nop>')
 
 -- Switch split (or create) with C-h,j,k,l
-nmap("<left>", "<Plug>WinMoveLeft")
-nmap("<down>", "<Plug>WinMoveDown")
-nmap("<up>", "<Plug>WinMoveUp")
-nmap("<right>", "<Plug>WinMoveRight")
+--nmap("<left>", "<Plug>WinMoveLeft")
+--nmap("<down>", "<Plug>WinMoveDown")
+--nmap("<up>", "<Plug>WinMoveUp")
+--nmap("<right>", "<Plug>WinMoveRight")
+
+-- Same as above, without Karabiner
+nmap("<C-h>", "<Plug>WinMoveLeft")
+nmap("<C-j>", "<Plug>WinMoveDown")
+nmap("<C-k>", "<Plug>WinMoveUp")
+nmap("<C-l>", "<Plug>WinMoveRight")
 
 -- Left and right can switch buffers
 -- nmap('<left>', ':bp<CR>')

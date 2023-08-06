@@ -18,5 +18,3 @@ require('user.ufo')
 require('user.telescope')
 require('user.cmp')
 require('user.lsp')
-
-

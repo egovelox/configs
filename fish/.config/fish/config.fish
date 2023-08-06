@@ -2,6 +2,9 @@
 if status is-interactive
 #####################################################
 
+# When Karabiner is missing
+bind \ck history-search-backward
+bind \cj history-search-forward
 #####################################################
 # IMPORT FILES
 #####################################################
@@ -15,6 +18,9 @@ set -gx LANG "en_US.UTF-8"
 set -gx LANGUAGE "en_US:en"
 set -gx LC_CTYPE "en_US.UTF-8"
 set -gx LC_NUMERIC "en_US.UTF-8"
+
+# for python, ruby etc multi-threading on M1
+set -xg OBJC_DISABLE_INITIALIZE_FORK_SAFETY "YES"
 #####################################################
 # JABBA
 #####################################################
@@ -26,6 +32,9 @@ end
   jabba use openjdk@1.11.0
 
 
+if test -d $HOME/apache-maven-3.6.3
+    set -g -x M2_HOME $HOME/apache-maven-3.6.3
+end
 #####################################################
 # FZF
 #####################################################
@@ -40,8 +49,8 @@ set -g -x FZF_DEFAULT_OPTS --layout=reverse --height 50% --no-separator --color 
 
 set -g -x NVM_DIR $HOME/.nvm
 
-# would be too long :
-# nvm use current
+# deactivate if too long :
+nvm use current > /dev/null
 
 
 #####################################################
@@ -65,7 +74,7 @@ starship init fish | source
 
 set -xg LESS "-SRXF"
 set -xg BKMR_DB_URL "$HOME/.config/bkms/bkmr.db"
-set -xg BKMR_FZF_OPTS "--reverse --height 20% --show-tags"
+set -xg BKMR_FZF_OPTS "--reverse --height 50% --show-tags"
 
 #####################################################
 end

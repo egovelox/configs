@@ -33,3 +33,4 @@ vim.api.nvim_set_hl(0, 'DiagnosticInfo', { fg=c.vscGray })
 vim.api.nvim_set_hl(0, 'DiagnosticWarn', { fg=c.vscGray })
 vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg=c.vscGray })
 
+require('vscode').load()

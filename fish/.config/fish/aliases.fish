@@ -31,3 +31,11 @@
   # need the running firefox extension, code in DEV/mdn/ftabswitch
   alias importbkms="$HOME/.config/bkms/bin/insert_latest.sh"
   alias syncbkms="$HOME/bin/sync_bkms.sh" 
+
+  alias fedor="ssh -i "$HOME/.ssh/fedor" -p8887 cuncdev@192.168.2.203"
+  alias fedor_r="ssh -i "$HOME/.ssh/fedor" -p8887 cuncdev@78.194.17.20"
+  alias run="/Users/maxime.richard/DEV/poc_product_search/poc_es_flow/run"
+alias run="/Users/maxime.richard/DEV/poc_product_search/poc_es_flow/run"
+alias run="/Users/maxime.richard/DEV/poc_product_search/poc_es_flow/run"
+alias run="/Users/maxime.richard/DEV/poc_product_search/poc_es_flow/run"
+alias run="/Users/maxime.richard/DEV/poc_product_search/poc_es_flow/run"

@@ -97,7 +97,7 @@ local function setup()
       fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
       "-configuration",
       home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. CONFIG,
-      "-data","/Users/maximerichard/workspace",
+      "-data","/Users/maxime.richard/workspace",
     },
   
     on_attach = on_attach,
