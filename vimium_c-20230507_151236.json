@@ -11,12 +11,14 @@
 	"keyLayout": 2,
 	"keyMappings": [
 		"#!no-check",
-		"# these two bindings take into account the fact that",
-		"# Ctrl-h and Ctrl-l",
-		"# are bound to lefet and right at the system level (karabiner)",
-		"mapKey <left> J",
-		"mapKey <right> K",
-		""
+    "# switch tabs",
+    "mapKey <c-k> J",
+    "mapKey <c-j> K",
+    "# previous/next page",
+    "mapKey <c-h> H",
+    "mapKey <c-l> L",
+    "mapKey <c-t> t",
+    "",
 	],
 	"vimSync": true
 }
