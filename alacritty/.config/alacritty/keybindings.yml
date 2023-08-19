@@ -14,20 +14,6 @@ key_bindings:
   - { key: Key9,      mods: Command,       chars: "\x01\x39"                       }
   # New tmux window ( i.e <C-a>c )
   - { key: T,      mods: Command,       chars: "\x01\x63"                       }
-  # Switch tmux window left ( i.e <C-a><C-h> )
-  - { key: H,      mods: Command,       chars: "\x01\x08"                       }
-  # Switch tmux window right ( i.e <C-a><C-l> )
-  - { key: L,      mods: Command,       chars: "\x01\x0c"                       }
-  # Split tmux window vertically ( i.e <C-a>| )
-  - { key: N,      mods: Command,       chars: "\x01\x7c"                       }
-  # Switch tmux window horizontally ( i.e <C-a>- )
-  - { key: M,      mods: Command,       chars: "\x01\x2d"                       }
-  # Switch tmux window via fzf ( i.e <C-a>j )
-  - { key: S,      mods: Command,       chars: "\x01\x6a"                       }
-  # Kill tmux window via fzf ( i.e <C-a>k )
-  - { key: K,      mods: Command,       chars: "\x01\x6b"                       }
-  # Switch tmux window to last used ( i.e <C-a>a )
-  - { key: A,      mods: Command,       chars: "\x01\x61"                       }
   # Switch firefox tab ( i.e <C-a>f )
   - { key: E,      mods: Command,       chars: "\x01\x66"                       }
   # Close firefox tabs ( i.e <C-a>x )

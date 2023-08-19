@@ -46,6 +46,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used in lots of plugins
   use "junegunn/fzf"
   use "junegunn/fzf.vim" -- FZF embedded in vim
+  use { 'ilAYAli/scMRU.nvim', commit = "fa09ac4" }
   use 'voldikss/vim-floaterm'
   use "machakann/vim-highlightedyank"
   use "airblade/vim-rooter"
@@ -53,7 +54,7 @@ return packer.startup(function(use)
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- Colorschemes
-  use "Mofiqul/vscode.nvim" -- A colorscheme inspired by vscode original dark theme
+  use {"Mofiqul/vscode.nvim", commit = "0597386"} -- A colorscheme inspired by vscode original dark theme
 
   -- Layout plugins
   use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } }
@@ -79,6 +80,12 @@ return packer.startup(function(use)
     end
   }
 
+  use {
+    'numToStr/Navigator.nvim',
+    config = function()
+        require('Navigator').setup()
+    end
+  }
   -- LSP
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"

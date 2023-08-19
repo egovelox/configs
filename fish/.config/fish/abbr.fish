@@ -11,4 +11,4 @@ abbr -a -- gco 'git checkout'
 abbr -a -- java11 'jabba use openjdk@1.11.0'
 abbr -a -- java17 'jabba use openjdk@1.17.0'
 abbr -a -- boo 'bkmr search -o --fzf'
-abbr -a -- fslak "$HOME/bin/slack_tracker/slack_tracker.sh"
+#abbr -a -- fslak "$HOME/bin/slack_tracker/slack_tracker.sh"

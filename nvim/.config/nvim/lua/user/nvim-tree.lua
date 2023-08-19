@@ -2,7 +2,7 @@ require("nvim-tree").setup({
 -- nvim-tree will open the folder of the file in current buffer
   update_focused_file = {
     enable = true,
-    update_cwd = false,
+    update_cwd = true,
   },
   diagnostics = {
     enable = true,
@@ -24,7 +24,7 @@ require("nvim-tree").setup({
     }
   },
   view = {
-    adaptive_size = true,
+    adaptive_size = false,
   },
   filters = {
     -- show dotfiles

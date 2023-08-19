@@ -1,7 +1,7 @@
 -- Preliminary note: 
 -- With external Karabiner-elements, the Esc key is mapped to Caps-lock
+-- Without Karabiner, the standard Ctrl-c is preferred over Esc (and Ctrl is remapped to Caps-lock via OS)
 
--- TODO : move in utils
 -- Helpers
 function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
@@ -39,25 +39,31 @@ imap('<down>', '<nop>')
 imap('<left>', '<nop>')
 imap('<right>', '<nop>')
 
+-- Old schemas
 -- Switch split (or create) with C-h,j,k,l
 --nmap("<left>", "<Plug>WinMoveLeft")
 --nmap("<down>", "<Plug>WinMoveDown")
 --nmap("<up>", "<Plug>WinMoveUp")
 --nmap("<right>", "<Plug>WinMoveRight")
-
--- Same as above, without Karabiner
-nmap("<C-h>", "<Plug>WinMoveLeft")
-nmap("<C-j>", "<Plug>WinMoveDown")
-nmap("<C-k>", "<Plug>WinMoveUp")
-nmap("<C-l>", "<Plug>WinMoveRight")
-
--- Left and right can switch buffers
--- nmap('<left>', ':bp<CR>')
--- nmap('<right>', ':bn<CR>')
+-- Same but without Karabiner
+--nmap("<C-h>", "<Plug>WinMoveLeft")
+--nmap("<C-j>", "<Plug>WinMoveDown")
+--nmap("<C-k>", "<Plug>WinMoveUp")
+--nmap("<C-l>", "<Plug>WinMoveRight")
 
 -- Scroll faster between paragraphs
-nmap('J', '}')
-nmap('K', '{')
+nmap('<C-j>', '}')
+nmap('<C-k>', '{')
+
+-- Change pane (with Navigator plugin, compatible with tmux panes)
+nmap('<C-s>h', '<CMD>NavigatorLeft<CR>')
+nmap('<C-s>l', '<CMD>NavigatorRight<CR>')
+nmap('<C-s>k', '<CMD>NavigatorUp<CR>')
+nmap('<C-s>j', '<CMD>NavigatorDown<CR>')
+tmap('<C-s>h', '<CMD>NavigatorLeft<CR>')
+tmap('<C-s>l', '<CMD>NavigatorRight<CR>')
+tmap('<C-s>k', '<CMD>NavigatorUp<CR>')
+tmap('<C-s>j', '<CMD>NavigatorDown<CR>')
 
 -- Search word under cursor
 nmap('<Leader>n', '*')
@@ -68,8 +74,6 @@ nmap('<Leader>fp', ':let @+ = expand("%:p")<CR>')
 
 -- mappings for nvim-tree
 nmap("<Leader><BS>", ':NvimTreeToggle<CR>')
-
-
 
 
 -- Zoom a split
@@ -93,7 +97,11 @@ vim.cmd[[ tnoremap <silent> <Leader>=   <C-\><C-n>:FloatermToggle<CR> ]]
 
 -- mappings for Telescope
 -- see other mappings in init.lua
-nmap('<Leader>o', ':Telescope oldfiles hidden=true<CR>')
+-- nmap('<Leader>o', ':Telescope oldfiles hidden=true<CR>')
+nmap('<Leader>o', ':Mru<CR>')
+nmap('<Leader>devi', ':MruRepos<CR>')
+nmap('<Leader>mfu', ':Mfu<CR>')
+
 nmap('<Leader>i', ':Telescope live_grep hidden=true<CR>')
 nmap('<leader>j',':Telescope jumplist<cr>')
 
@@ -122,15 +130,6 @@ nmap("<Leader>'", ':History:<cr>')
 
 -- <leader><leader> toggles between buffers
 nmap('<leader><leader>', '<C-^>')
-
-
-
--- TODO : use another way 
--- Ctrl+h to stop searching
--- vmap('<C-h>', ':nohlsearch<cr>')
---nmap('<C-h>', ':nohlsearch<cr>')
-
-
 
 -- In visual-mode, paste to the clipboard with <C-C>
 -- vim.api.nvim_set_keymap('v', '<C-C>', '"+y', { noremap = true })
