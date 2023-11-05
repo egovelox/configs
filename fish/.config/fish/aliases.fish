@@ -26,17 +26,18 @@
 
   alias ss='tmux list-windows -a | cut -d" " -f1,2 | while read line; echo $line | sed -e "s/: / /" -e "s/+/ /g" ; end | fzf-tmux -p 30% -- --prompt "switch window: " --no-bold --layout=reverse --height 50% --margin 0% --no-separator --no-info --black --color bg+:black,hl:reverse,hl+:reverse,gutter:black | cut -d " " -f1 | xargs tmux switch -t'
   
-  alias fabs='$HOME/DEV/mdn/ftabswitch/app/switch_tab.sh'
-  alias fabc='$HOME/DEV/mdn/ftabswitch/app/close_tabs.sh'
-
   alias tsm="transmission-remote"
   alias tsmd="transmission-daemon"
 
   # need the running firefox extension, code in DEV/mdn/ftabswitch
+  alias ffs='$HOME/DEV/mdn/ftabswitch/app/switch_tab.sh'
+  alias ffc='$HOME/DEV/mdn/ftabswitch/app/close_tabs.sh'
   alias importbkms="$HOME/.config/bkms/bin/insert_latest.sh"
   alias syncbkms="$HOME/bin/sync_bkms.sh" 
 
   alias fedor="ssh -i "$HOME/.ssh/fedor" -p8887 cuncdev@192.168.2.203"
   alias fedor_r="ssh -i "$HOME/.ssh/fedor" -p8887 cuncdev@78.194.17.20"
 
-  alias run="$HOME/DEV/poc_product_search/poc_es_flow/run"
+  alias py="python3"
+  alias ed="bass source $HOME/bin/edit_dev_files.sh"
+  alias bk="bkmr search -o --json | jq -r '.[] | \" \(.tags) :::: \(.metadata) :::: \(.URL)\"' | fzf-tmux -p 80% --delimiter '::::' -i --with-nth 1,2 --bind \"enter:execute(open {3})+accept\" --color='hl:222' > /dev/null"

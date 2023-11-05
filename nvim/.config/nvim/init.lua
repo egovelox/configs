@@ -19,6 +19,10 @@ require('user.telescope')
 require('user.cmp')
 require('user.lsp')
 
+--vim.cmd("syntax enable")
+--vim.cmd("filetype plugin indent on")
+-- vim.g.rustfmt_autosave = 1
+
 -- https://github.com/neovim/neovim/issues/21771
 vim.api.nvim_create_autocmd('DirChanged', {
   group = vim.api.nvim_create_augroup('setDir', { clear = true }),

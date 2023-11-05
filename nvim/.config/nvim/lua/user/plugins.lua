@@ -91,7 +91,19 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"
   use 'simrat39/rust-tools.nvim'
+  -- used for running rustfmt on save
+  use { 
+    'rust-lang/rust.vim',
+    ft = { 'rust' },
+    config = function()
+      vim.g.rustfmt_autosave = 1
+    end
+  }
   use 'mfussenegger/nvim-jdtls'
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
 
   -- cmp plugins
   use 'hrsh7th/cmp-nvim-lsp'

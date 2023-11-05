@@ -1,3 +1,7 @@
+[firefox] switch tab [C-s f, fabs]
+[firefox] close tab  [C-s c, fabc]
+[bookmarks] search bookmarks [bk, boo]
+[dev] search files [ed]
 [tmux - fzf] kill window [C-s x]
 [tmux - fzf] switch window [C-s s]
 [tmux] create window [C-a c]

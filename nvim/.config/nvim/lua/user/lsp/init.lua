@@ -7,6 +7,7 @@ end
 require "user.lsp.mason"
 require "user.lsp.diagnostic"
 require "user.lsp.handlers"
+require "user.lsp.null-ls"
 
 
 -- Use an on_attach function to only map the following keys
@@ -33,11 +34,10 @@ local on_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
   -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 
 -- SERVERS
 
@@ -47,16 +47,65 @@ lspconfig['tsserver'].setup{
   capabilities = capabilities,
 }
 
+lspconfig['clangd'].setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+}
+
+lspconfig['pyright'].setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetype = {"python"},
+}
+
+lspconfig['gopls'].setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls"},
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+}
+
 local rt = require("rust-tools")
 rt.setup({
+  tools = {
+    inlay_hints = {
+      only_current_line = true,
+    },
+    hover_actions = {
+      auto_focus = true
+    }
+  },
   server = {
     capabilities = capabilities,
     on_attach = function(_, bufnr)
       -- Hover actions
       vim.keymap.set('n', '<Leader>h', rt.hover_actions.hover_actions, { buffer = bufnr })
       -- Code action groups
-      vim.keymap.set('n', '<Leader>a', rt.code_action_group.code_action_group, { buffer = bufnr })
+      vim.keymap.set('n', '<Leader>-', rt.code_action_group.code_action_group, { buffer = bufnr })
     end,
+    settings = {
+      -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+      ["rust-analyzer"] = {
+        -- enable clippy on save
+        cargo = {
+          allFeatures = true,
+        },
+        checkOnSave = {
+          command = "clippy",
+        },
+        -- rust-analyzer cannot have diagnostics on edit,
+        -- instead it requires that you first save the file.
+        -- This feature allows a bunch of diagnostics to work
+        diagnostics = {
+          enable = true,
+          experimental = {
+                  enable = true,
+          },
+        },
+      },
+    }
   },
 })
 

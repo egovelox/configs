@@ -4,6 +4,7 @@ append-to-path /usr/sbin
 append-to-path $HOME/bin
 append-to-path /opt/homebrew/bin
 append-to-path /opt/homebrew/sbin
+append-to-path $HOME/Library/pnpm/global
 
 setup-rust
 append-to-path $CARGO_HOME/bin

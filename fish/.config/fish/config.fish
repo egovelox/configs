@@ -54,6 +54,17 @@ nvm use current > /dev/null
 
 
 #####################################################
+# Pyenv
+# Requires a build environment to build Python new versions
+  # xcode-select --install
+  # brew install openssl readline sqlite3 xz zlib tcl-tk
+#####################################################
+
+set -g -x PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+pyenv init - | source
+
+#####################################################
 # GREETING
 #####################################################
 
@@ -75,7 +86,16 @@ starship init fish | source
 set -xg LESS "-SRXF"
 set -xg BKMR_DB_URL "$HOME/.config/bkms/bkmr.db"
 set -xg BKMR_FZF_OPTS "--reverse --height 50% --show-tags"
+set -xg HELIX_RUNTIME "$HOME/DEV/rust/helix/runtime"
+
 
 #####################################################
 end
 
+
+# pnpm
+set -gx PNPM_HOME "/Users/maxime.richard/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
