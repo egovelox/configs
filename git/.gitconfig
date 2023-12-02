@@ -6,6 +6,6 @@
     cof = !git branch --all | fzf | xargs git checkout
     pulreb = pull --rebase
 [core]
-	excludesfile = /Users/maxime.richard/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [push]
 	autoSetupRemote = true
