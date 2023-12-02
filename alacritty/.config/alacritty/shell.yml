@@ -1,7 +1,7 @@
 # set up alacritty shell
 shell:
-  program: /opt/homebrew/bin/fish
+  program: /usr/local/bin/fish
   args: 
     - -l
     - -c
-    - "/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux"
+    - "/usr/local/bin/tmux attach || /usr/local/bin/tmux"

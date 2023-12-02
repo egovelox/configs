@@ -17,4 +17,5 @@ then
 else
   $HOME/configs/scripts/brew/install_brew.sh
   $HOME/configs/scripts/brew/install_brew_packages.sh
+  $HOME/configs/scripts/brew/adapt_brew_path.sh
 fi
