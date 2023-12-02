@@ -10,7 +10,9 @@ bind \cj history-search-forward
 #####################################################
 
 source $HOME/.config/fish/env.fish
-source $HOME/.config/fish/sec_env.fish
+if test -f $HOME/.config/fish/sec_env.fish
+    source $HOME/.config/fish/sec_env.fish
+end
 source $HOME/.config/fish/aliases.fish
 source $HOME/.config/fish/abbr.fish
 

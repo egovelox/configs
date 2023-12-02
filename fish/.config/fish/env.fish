@@ -2,9 +2,18 @@
 append-to-path /usr/local/bin
 append-to-path /usr/sbin
 append-to-path $HOME/bin
-append-to-path /opt/homebrew/bin
-append-to-path /opt/homebrew/sbin
-append-to-path $HOME/Library/pnpm/global
+# /opt/homebrew only exists for M1 devices
+if test -d /opt/homebrew/bin
+  append-to-path /opt/homebrew/bin
+end
+# /opt/homebrew only exists for M1 devices
+if test -d /opt/homebrew/sbin
+  append-to-path /opt/homebrew/sbin
+end
+# only if pnpm is installed
+if test -d $HOME/Library/pnpm
+  append-to-path $HOME/Library/pnpm/global
+end
 
 setup-rust
 append-to-path $CARGO_HOME/bin
