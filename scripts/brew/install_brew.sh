@@ -1,9 +1,10 @@
 #! /bin/bash
 
-if test ! $(which brew)
+# On MacOS
+if [ -f /usr/local/bin/brew ] || [ -f /opt/homebrew/bin/brew ] || [ -f /home/homebrew/.homebrew/bin/brew ]
 then
+  echo "[OK] Already existing brew"
+else
   echo "[INFO] Installing homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-  echo "[OK] Already existing $(which brew)"
 fi

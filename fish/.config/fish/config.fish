@@ -28,14 +28,14 @@ set -xg OBJC_DISABLE_INITIALIZE_FORK_SAFETY "YES"
 #####################################################
 
 if test -d $HOME/.jabba
-    source $HOME/.jabba/jabba.fish
+  source $HOME/.jabba/jabba.fish
+  jabba use openjdk@1.11.0
 end
 
-  jabba use openjdk@1.11.0
 
 
 if test -d $HOME/apache-maven-3.6.3
-    set -g -x M2_HOME $HOME/apache-maven-3.6.3
+  set -g -x M2_HOME $HOME/apache-maven-3.6.3
 end
 #####################################################
 # FZF

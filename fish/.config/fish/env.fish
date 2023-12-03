@@ -1,20 +1,40 @@
 # to add brew installed packages
-append-to-path /usr/local/bin
-append-to-path /usr/sbin
-if test -d $HOME/bin
-  append-to-path $HOME/bin
+# on Linux
+if test -d /home/linuxbrew/.linuxbrew/bin
+  append-to-path /home/linuxbrew/.linuxbrew/bin
 end
-# /opt/homebrew only exists for M1 devices
+if test -d /home/linuxbrew/.linuxbrew/sbin
+  append-to-path /home/linuxbrew/.linuxbrew/sbin
+end
+
+# on MacOs Intel
+if test -d /usr/local/bin
+  append-to-path /usr/local/bin
+end
+if test -d /usr/sbin
+  append-to-path /usr/sbin
+end
+
+# on MacOs M1/M2
 if test -d /opt/homebrew/bin
   append-to-path /opt/homebrew/bin
 end
-# /opt/homebrew only exists for M1 devices
 if test -d /opt/homebrew/sbin
   append-to-path /opt/homebrew/sbin
 end
+
+if test -d $HOME/bin
+  append-to-path $HOME/bin
+end
+
 # only if pnpm is installed
 if test -d $HOME/Library/pnpm
   append-to-path $HOME/Library/pnpm/global
+
+  set -gx PNPM_HOME "/Users/maxime.richard/Library/pnpm"
+  if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+  end
 end
 
 setup-rust
