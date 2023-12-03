@@ -3,7 +3,7 @@
 ########################################
 
 # default shell
-set -g default-shell /opt/homebrew/bin/fish
+set -g default-shell ${BREW_PATH}/bin/fish
 #set -g default-command /opt/homebrew/bin/fish
 
 # helps in faster key repetition Avoid ESC delay
