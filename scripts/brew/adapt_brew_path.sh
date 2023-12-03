@@ -8,6 +8,7 @@ else
   export BREW_PATH="$(brew --prefix)"
   envsubst '${BREW_PATH}' < "$HOME/configs/alacritty/.config/alacritty/shell.yml.tpl" > "$HOME/configs/alacritty/.config/alacritty/shell.yml"
   envsubst '${BREW_PATH}' < "$HOME/configs/tmux/.tmux/tmux-other-settings.conf.tpl" > "$HOME/configs/tmux/.tmux/tmux-other-settings.conf"
+  envsubst '${BREW_PATH}' < "$HOME/configs/tmux/.tmux/tmux-plugins.conf.tpl" > "$HOME/configs/tmux/.tmux/tmux-plugins.conf"
 fi
 
 
