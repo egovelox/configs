@@ -1,7 +1,9 @@
 # to add brew installed packages
 append-to-path /usr/local/bin
 append-to-path /usr/sbin
-append-to-path $HOME/bin
+if test -d $HOME/bin
+  append-to-path $HOME/bin
+end
 # /opt/homebrew only exists for M1 devices
 if test -d /opt/homebrew/bin
   append-to-path /opt/homebrew/bin
