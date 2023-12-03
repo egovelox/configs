@@ -95,9 +95,3 @@ set -xg HELIX_RUNTIME "$HOME/DEV/rust/helix/runtime"
 end
 
 
-# pnpm
-set -gx PNPM_HOME "/Users/maxime.richard/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
