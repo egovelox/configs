@@ -18,7 +18,7 @@ then
 else
   echo "[OK] Already existing $(which brew)"
   # on Linux
-  if [ -d /home/homebrew/.homebrew ]
+  if [ -d /home/linuxbrew/.linuxbrew ]
   then
     echo "[INFO] Installing brew packages list from configsLinuxBrewfile..."
     installBrewfile "configsLinuxBrewfile"

@@ -1,4 +1,4 @@
-if [ -d /home/homebrew/.homebrew ]
+if [ -d /home/linuxbrew/.linuxbrew ]
 then
   if [ -f $HOME/.local/share/fonts/FiraMonoNerdFont-Regular.otf ] 
   then
