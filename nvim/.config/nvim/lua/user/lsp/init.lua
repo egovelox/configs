@@ -12,7 +12,7 @@ require "user.lsp.null-ls"
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -40,6 +40,17 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- SERVERS
+
+lspconfig['lua_ls'].setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = { globals = {'vim', 'lsp_flags'} }
+    }
+  }
+}
 
 lspconfig['tsserver'].setup{
   on_attach = on_attach,

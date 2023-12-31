@@ -23,8 +23,12 @@ require('lualine').setup({
     },
     lualine_c = {
       { 'filename', fmt = function(str) if str:find("NvimTree", 1, false) ~= 1 then return str end end },
-      'lsp_progress'
     },
+    --
+    --lualine_c = {
+    --  { 'filename', fmt = function(str) if str:find("NvimTree", 1, false) ~= 1 then return str end end },
+    --  'lsp_progress'
+    --},
     lualine_x = {'encoding', 'fileformat', "require'lsp-status'.status()", 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}

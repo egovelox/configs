@@ -51,7 +51,7 @@ return packer.startup(function(use)
   use 'voldikss/vim-floaterm'
   use "machakann/vim-highlightedyank"
   use "airblade/vim-rooter"
-  use 'arkav/lualine-lsp-progress'
+  -- use 'arkav/lualine-lsp-progress' replaced by fidget
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- Colorschemes
@@ -59,8 +59,14 @@ return packer.startup(function(use)
 
   -- Layout plugins
   use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } }
-  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-
+  use { 'nvim-lualine/lualine.nvim', commit = "2248ef2", requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+  use {
+    "j-hui/fidget.nvim",
+    tag = "v1.1.0",
+    config = function()
+      require("fidget").setup()
+    end
+  }
   -- Treesitter
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
@@ -73,8 +79,8 @@ return packer.startup(function(use)
         {'nvim-lua/plenary.nvim'},                               
         {'nvim-telescope/telescope-fzf-native.nvim', run="make"},
         {"nvim-telescope/telescope-live-grep-args.nvim"},
-        {'nvim-telescope/telescope-symbols.nvim'},               
-    },    
+        {'nvim-telescope/telescope-symbols.nvim'},
+    },
     config = function()
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("live_grep_args")
@@ -93,14 +99,14 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig"
   use 'simrat39/rust-tools.nvim'
   -- used for running rustfmt on save
-  use { 
+  use {
     'rust-lang/rust.vim',
     ft = { 'rust' },
     config = function()
       vim.g.rustfmt_autosave = 1
     end
   }
-  use 'mfussenegger/nvim-jdtls'
+  use { 'mfussenegger/nvim-jdtls', commit = "66b5ace" }
   use {
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
@@ -127,9 +133,6 @@ return packer.startup(function(use)
       })
     end,
   })
-
-
-
 
   -- Automatically setup your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
