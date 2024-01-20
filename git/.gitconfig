@@ -9,3 +9,5 @@
 	excludesfile = ~/.gitignore_global
 [push]
 	autoSetupRemote = true
+[fetch]
+	prune = true
