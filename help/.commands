@@ -1,4 +1,7 @@
 [firefox] switch tab [C-s f, ffs]
+[firefox] close tab [x] with Vimium OR [Cmd-w]
+[firefox] last tab [Cmd-9] with Better jump to tab
+[firefox] first non-pinned tab [Cmd-8] with Better jump to tab
 [firefox] close tab  [C-s c, ffc]
 [bookmarks] search bookmarks [bk, boo]
 [dev] search files [ed]
