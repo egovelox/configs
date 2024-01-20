@@ -1,0 +1,21 @@
+[env]
+TERM = "alacritty"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "none"
+dynamic_title = true
+opacity = 1.0
+startup_mode = "Fullscreen"
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 0
+y = 0
