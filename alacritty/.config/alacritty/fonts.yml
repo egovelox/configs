@@ -10,7 +10,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     #family: Menlo
 
     # The `style` can be specified to pick a specific face.
@@ -53,7 +53,7 @@ font:
   # Be careful: this line could move the tmux status-line, introducing a annoying padding
   # https://stackoverflow.com/questions/39714811/annoying-padding-between-tmux-bar-and-bottom-of-terminal-window-when-maximised
   # Then you may use padding (x,y) in alacritty init.yml, but it might not be enough to fix it
-  size: 15
+  size: 15.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -83,8 +83,9 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    #background: '#082222'
-    background: '#1d1f21'
+    background: '#222626'  # mat green black
+    #background: '#082222' # deep green
+    #background: '#1d1f21' # vim black
     #foreground: '#8d9e41'
     #foreground: '#86acb8'
     foreground: '#b3e3d9'
@@ -167,7 +168,8 @@ colors:
   # hyperlink URI preview, etc.
   #
   footer_bar:
-    background: '#c5c8c6'
+    #background: '#c5c8c6'
+    background: '#172121'
     foreground: '#1d1f21'
 
   # Selection colors
