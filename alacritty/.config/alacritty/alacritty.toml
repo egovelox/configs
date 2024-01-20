@@ -1,4 +1,4 @@
-import = ["/Users/maxime.richard/.config/alacritty/init.toml", "/Users/maxime.richard/.config/alacritty/fonts.toml", "/Users/maxime.richard/.config/alacritty/shell.toml", "/Users/maxime.richard/.config/alacritty/keybindings.toml"]
+import = ["~/.config/alacritty/init.toml", "~/.config/alacritty/fonts.toml", "~/.config/alacritty/shell.toml", "~/.config/alacritty/keybindings.toml"]
 
 [debug]
 persistent_logging = true

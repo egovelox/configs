@@ -1,3 +1,0 @@
-[shell]
-args = ["-l", "-c", "/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux"]
-program = "/opt/homebrew/bin/fish"
