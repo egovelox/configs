@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
-# This script is to be used
-# with the source command
-# so that the parent shell can cd in the $CHOSEN_DIR
-# source select.sh
-
-
 
 # set -x
 
