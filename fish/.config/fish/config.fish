@@ -1,5 +1,8 @@
 # Commands to run in interactive sessions can go here
 if status is-interactive
+
+set -gx EDITOR "nvim"
+
 #####################################################
 
 # When Karabiner is missing
