@@ -129,9 +129,27 @@ nmap("<Leader>'", ':History:<cr>')
 
 
 -- <leader><leader> toggles between buffers
-nmap('<leader><leader>', '<C-^>')
+nmap('<Leader><Leader>', '<C-^>')
 
 -- In visual-mode, paste to the clipboard with <C-C>
 -- vim.api.nvim_set_keymap('v', '<C-C>', '"+y', { noremap = true })
 -- this was commented due to another choice : set clipboard=unnamedplus (simple y will yank to clipboard)
 -- see https://stackoverflow.com/questions/4608161/copying-text-outside-of-vim-with-set-mouse-a-enabled/4608206#4608206
+--
+
+-- dap keybindings
+nmap('<Leader>db', ':DapToggleBreakpoint<CR>')
+--vim.keymap.set('n', '<Leader>dus', function()
+--   local widgets = require('dap.ui.widgets')
+ --  local my_sidebar = widgets.sidebar(widgets.frames)
+  -- my_sidebar.open()
+-- end
+--)
+vim.keymap.set('n', '<Leader>dgt', function()
+   require('dap-go').debug_test()
+ end
+)
+vim.keymap.set('n', '<Leader>dgl', function()
+   require('dap-go').debug_last()
+ end
+)

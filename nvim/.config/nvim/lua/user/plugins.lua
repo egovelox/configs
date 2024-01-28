@@ -108,6 +108,33 @@ return packer.startup(function(use)
   }
   use { 'mfussenegger/nvim-jdtls', commit = "66b5ace" }
   use {
+    'rcarriga/nvim-dap-ui',
+    requires = { 'mfussenegger/nvim-dap' },
+    config = function()
+      require("dapui").setup()
+    end
+  }
+  use {
+    'mfussenegger/nvim-dap',
+    commit = "9adbfdc",
+    config = function (_,opts)
+      vim.keymap.set('n', '<Leader>dus', function()
+      local widgets = require('dap.ui.widgets')
+      local my_sidebar = widgets.sidebar(widgets.scopes)
+      my_sidebar.open()
+      end)
+    end
+  }
+  use {
+    'leoluz/nvim-dap-go',
+    commit = "a5cc8dc",
+    ft = { 'go' },
+    requires = { 'mfussenegger/nvim-dap' },
+    config = function (_,opts)
+      require("dap-go").setup(opts)
+    end
+  }
+  use {
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
   }

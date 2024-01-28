@@ -13,6 +13,7 @@ require("mason").setup({
     "mypy", -- python linter and static type checker
     "black", -- python code formatter
     "gopls",
+    "delve",
     "goimports-reviser",
     "golines",
   }
