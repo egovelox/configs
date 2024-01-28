@@ -12,7 +12,7 @@ Open this help with <Leader>mo
 ==============================================================================
 MEMO LEADER                                                 *memo_leader*
 
-<Leader><Leader>    Alternate Buffer
+<Leader>0   Alternate Buffer
 <Leader>=   Toggle terminal popup. But prefer using tmux <C-a>- OR <C-a>|
 
 <Leader>o   [Telescope] recently open files
@@ -36,6 +36,9 @@ MEMO LEADER                                                 *memo_leader*
 <Leader>gm  [Git-messenger] Open floating popup
 <Leader>gb  [Nvim-blame-line] Toggle blame line
 
+<Leader>Backspace   Toggle nvim tree
+
+
 ==============================================================================
 MEMO CTRL                                                 *memo_ctrl*
 
@@ -54,8 +57,10 @@ MEMO VARIA                                                 *memo_varia*
 I           [NvimTree] Normal mode, toggle .gitignore files
 H           [NvimTree] Normal mode, toggle dotfiles
 
-zn          [Ufo] Open a fold
-zm          [Ufo] Close a fold
+za          [Ufo] Toggle a fold
+zR          [Ufo] Open all folds
+zM          [Ufo] Close all folds
+
 
 ==============================================================================
 MEMO TMUX                                                 *memo_tmux*

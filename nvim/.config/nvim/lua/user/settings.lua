@@ -23,13 +23,16 @@ vim.o.splitright = true
 vim.opt.mouse = "a"
 
 -- so nice: paste a normal yank into the clipboard
-vim.opt.clipboard = "unnamedplus"  
+vim.opt.clipboard = "unnamedplus"
 
 
 vim.o.termguicolors = true
 
-
-vim.o.foldcolumn = '5' -- '1' will show bars (thanks to ufo plugin)
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- '1' will show vertical bars on one column. 
+-- If more columns than 1 are needed to display those vertical bars, 
+-- then it will display numbers instead.
+vim.o.foldcolumn = '1'
+-- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true

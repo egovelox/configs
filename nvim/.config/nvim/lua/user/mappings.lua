@@ -31,7 +31,7 @@ tmap('<C-c>', "<Esc>")
 -- Open the memo_config help
 nmap('<Leader>mo', ':h memo_config<CR>')
 
---No arrow keys --- force yourself to use the home row
+--No arrow keys --- force yourself to use the home row 😺
 nmap('<up>', '<nop>')
 nmap('<down>', '<nop>')
 imap('<up>', '<nop>')
@@ -128,8 +128,10 @@ nmap('<Leader>.', ':Buffers<CR>')
 nmap("<Leader>'", ':History:<cr>')
 
 
--- <leader><leader> toggles between buffers
-nmap('<Leader><Leader>', '<C-^>')
+-- <leader><leader> could toggle between buffers
+-- but is too slow ...
+-- nmap('<Leader><Leader>', '<C-^>')
+nmap('<Leader>0', '<C-^>')
 
 -- In visual-mode, paste to the clipboard with <C-C>
 -- vim.api.nvim_set_keymap('v', '<C-C>', '"+y', { noremap = true })
@@ -139,12 +141,14 @@ nmap('<Leader><Leader>', '<C-^>')
 
 -- dap keybindings
 nmap('<Leader>db', ':DapToggleBreakpoint<CR>')
---vim.keymap.set('n', '<Leader>dus', function()
---   local widgets = require('dap.ui.widgets')
- --  local my_sidebar = widgets.sidebar(widgets.frames)
-  -- my_sidebar.open()
--- end
---)
+nmap('<Leader>dui', ':lua require("dapui").toggle()<CR>')
+--[[
+vim.keymap.set('n', '<Leader>dus', function()
+   local widgets = require('dap.ui.widgets')
+   local my_sidebar = widgets.sidebar(widgets.frames)
+   my_sidebar.open()
+ end
+)
 vim.keymap.set('n', '<Leader>dgt', function()
    require('dap-go').debug_test()
  end
@@ -153,3 +157,4 @@ vim.keymap.set('n', '<Leader>dgl', function()
    require('dap-go').debug_last()
  end
 )
+--]]

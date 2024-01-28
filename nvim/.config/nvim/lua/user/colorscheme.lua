@@ -34,3 +34,6 @@ vim.api.nvim_set_hl(0, 'DiagnosticWarn', { fg=c.vscGray })
 vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg=c.vscGray })
 
 require('vscode').load()
+-- after vscode, to overwrite it
+vim.api.nvim_command("hi Folded guibg=None")
+
