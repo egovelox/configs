@@ -1,4 +1,5 @@
 require("neo-tree").setup({
+  close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
   default_component_configs = {
     container = {
       enable_character_fade = false
@@ -32,8 +33,12 @@ require("neo-tree").setup({
   filesystem = {
     filtered_items = {
       visible = false, -- when true, they will just be displayed differently than normal items
-      hide_dotfiles = true,
-      hide_gitignored = true,
+      hide_dotfiles = false,
+      hide_gitignored = false,
+      hide_by_name = {
+        "node_modules",
+        ".git"
+      },
     },
     window = {
       mappings = {
@@ -47,6 +52,11 @@ require("neo-tree").setup({
           vim.cmd([[Neotree focus]])
         end)
       end,
+    },
+    follow_current_file = {
+            enabled = true, -- This will find and focus the file in the active buffer every time
+            --               -- the current file is changed while the tree is open.
+            leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
     },
   },
   window = {
