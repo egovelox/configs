@@ -31,6 +31,24 @@ local plugins = {
   { 'nvim-tree/nvim-tree.lua', dependencies = { 'nvim-tree/nvim-web-devicons' } },
   { 'nvim-lualine/lualine.nvim', commit = "2248ef2", dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true } },
   {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+      require("oil").setup({
+        columns = {
+          "icon",
+        },
+        view_options = {
+          show_hidden = true,
+        },
+      })
+    end,
+  },
+  "tpope/vim-fugitive",
+  {
     "j-hui/fidget.nvim",
     version = "v1.1.0",
     config = function()

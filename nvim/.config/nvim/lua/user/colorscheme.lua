@@ -37,3 +37,9 @@ require('vscode').load()
 -- after vscode, to overwrite it
 vim.api.nvim_command("hi Folded guibg=None")
 
+-- theme for oil
+vim.api.nvim_command("highlight OilFile guifg=gray")
+vim.api.nvim_command("highlight OilDir guifg=gray")
+vim.api.nvim_command("highlight OilDirIcon guifg=gray")
+
+

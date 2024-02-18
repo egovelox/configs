@@ -158,3 +158,7 @@ vim.keymap.set('n', '<Leader>dgl', function()
  end
 )
 --]]
+--
+
+--- vim fugitive
+nmap('<C-g>', ':Git<CR>')
