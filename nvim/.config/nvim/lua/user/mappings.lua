@@ -73,7 +73,7 @@ nmap('<Leader>fp', ':let @+ = expand("%:p")<CR>')
 
 
 -- mappings for nvim-tree
-nmap("<Leader><BS>", ':NvimTreeToggle<CR>')
+nmap("<Leader><BS>", ':Neotree toggle<CR>')
 
 
 -- Zoom a split

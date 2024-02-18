@@ -28,7 +28,18 @@ local plugins = {
   { "Mofiqul/vscode.nvim", commit = "0597386" }, -- A colorscheme inspired by vscode original dark theme
 
   -- Layout plugins
+  { "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
+  --[[
   { 'nvim-tree/nvim-tree.lua', dependencies = { 'nvim-tree/nvim-web-devicons' } },
+  --]]
   { 'nvim-lualine/lualine.nvim', commit = "2248ef2", dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true } },
   {
     'stevearc/oil.nvim',
