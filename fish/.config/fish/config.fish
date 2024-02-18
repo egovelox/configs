@@ -49,14 +49,11 @@ set -g -x FZF_DEFAULT_OPTS --layout=reverse --height 50% --no-separator --color 
 
 
 #####################################################
-# NVM
+# FNM
 #####################################################
 
-set -g -x NVM_DIR $HOME/.nvm
-
-# deactivate if too long :
-nvm use current > /dev/null
-
+set -g -x FNM_DIR $HOME/.fnm
+fnm env --use-on-cd | source
 
 #####################################################
 # Pyenv
