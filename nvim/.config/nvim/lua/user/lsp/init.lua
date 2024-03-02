@@ -4,7 +4,6 @@ if not status_lspconfig_ok then
   return
 end
 
-require "user.lsp.mason"
 require "user.lsp.diagnostic"
 require "user.lsp.handlers"
 require "user.lsp.null-ls"
