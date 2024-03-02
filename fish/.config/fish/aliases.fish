@@ -10,7 +10,8 @@
 
   alias fishconf='vim $HOME/.config/fish/config.fish'
 
-  alias dev='cd $HOME/DEV'
+  #alias dev='cd $HOME/DEV'
+  alias dev='cd "$(find $HOME/DEV -maxdepth 1 -type d -print | fzf-tmux -p -- --delimiter / --with-nth -1 --border-label=DEV)" && nvim .'
   alias devi='nvim +"MruRepos"'
   alias devi2='set API_DIR $HOME/DEV/$(/bin/ls $HOME/DEV | fzf-tmux -p 30% -- --prompt "Open project: " --no-bold --layout=reverse --height 50% --margin 0% --no-separator --no-info --black --color bg+:black,hl:reverse,hl+:reverse,gutter:black) && cd $API_DIR && vim $API_DIR'
 
@@ -20,18 +21,15 @@
   alias fdat='hfactory database connect -i'
   alias flog='hfactory logs preview -m'
 
-  alias whr="weechat-hotlist-rs"
-  alias sl="weechat-hotlist-rs hotlist | jq '{threads:.priority_1, private:.priority_2, public:.priority_3}'"
-  alias sld="weechat-hotlist-rs hotlist -f detailed | jq "
+  alias hot="weechat-hotlist-rs"
+  alias hotclear="weechat-hotlist-rs clear"
+  alias hotlist="weechat-hotlist-rs hotlist -f detailed | jq"
 
   alias ss='tmux list-windows -a | cut -d" " -f1,2 | while read line; echo $line | sed -e "s/: / /" -e "s/+/ /g" ; end | fzf-tmux -p 30% -- --prompt "switch window: " --no-bold --layout=reverse --height 50% --margin 0% --no-separator --no-info --black --color bg+:black,hl:reverse,hl+:reverse,gutter:black | cut -d " " -f1 | xargs tmux switch -t'
   
   alias tsm="transmission-remote"
   alias tsmd="transmission-daemon"
 
-  # need the running firefox extension, code in DEV/mdn/ftabswitch
-  alias ffs='$HOME/DEV/mdn/ftabswitch/app/switch_tab.sh'
-  alias ffc='$HOME/DEV/mdn/ftabswitch/app/close_tabs.sh'
   alias importbkms="$HOME/.config/bkms/bin/insert_latest.sh"
   alias syncbkms="$HOME/bin/sync_bkms.sh" 
 

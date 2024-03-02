@@ -45,8 +45,7 @@ end
 #####################################################
 
 set -g -x FZF_DEFAULT_COMMAND fd --type f --hidden --follow --exclude /.git
-set -g -x FZF_DEFAULT_OPTS --layout=reverse --height 50% --no-separator --color bg+:-1
-
+set -g -x FZF_DEFAULT_OPTS -i --cycle --black --ansi --color=fg:246,fg+:150,bg+:black --no-bold --no-hscroll --layout=reverse --bind change:first --height 50% --no-separator --border=bold  --padding 7%
 
 #####################################################
 # FNM
