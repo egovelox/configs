@@ -4,6 +4,8 @@
 [firefox]       first non-pinned tab [Cmd-8] with Better jump to tab
 [firefox]       close tab  [C-s c, ffc]
 [vim]           open memo [Leader mo]
+[vim]           Ctrl-x/v to open split from fzf
+[vim]           %s/`\(.*\)`/[\1](Fighting-\1-Kirby)
 [bookmarks]     search bookmarks [bk, boo]
 [dev]           search files [ed]
 [tmux - fzf]    kill window [C-s x]
