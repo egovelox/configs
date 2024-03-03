@@ -116,9 +116,6 @@ require("neo-tree").setup({
     }
   },
 })
-
-vim.cmd [[hi NeoTreeFileName term=None guifg=gray ctermfg=111]]
-vim.cmd [[hi NeoTreeDirectoryName term=None guifg=gray ctermfg=111]]
     end
   },
 }
