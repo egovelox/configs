@@ -1,0 +1,59 @@
+{
+	"name": "Vimium C",
+	"@time": "10/19/2024, 9:44:12 PM",
+	"time": 1729367052288,
+	"environment": {
+		"extension": "1.99.997",
+		"platform": "mac",
+		"firefox": 131
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":vimium://options.html"
+		}
+	],
+	"grabBackFocus": true,
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"# close a tab is like in firefox",
+		"mapKey <m-w> x ",
+		"",
+		"# these two bindings take into account the fact that",
+		"# Ctrl-h and Ctrl-l",
+		"# are bound to left and right at the system level (karabiner)",
+		"mapkey <c-c> <esc>",
+		"# switch tabs",
+		"# go to latest tab",
+		"mapKey <c-p> ^",
+		"# (same as firefox hack in config.js)",
+		"mapKey <c-k> J",
+		"mapKey <c-j> K",
+		"",
+		"# previous/next page",
+		"mapKey <c-h> H",
+		"mapKey <c-l> L",
+		"",
+		"mapKey <c-t> t",
+		"",
+		"# Vomnibar",
+		"# { bookmark, history, tab, search, domain }",
+		"map o Vomnibar.activate engines=\"search,tab,bookmark\"",
+		"map <c-s> Vomnibar.activate engines=\"tab\"",
+		"map <c-o> Vomnibar.activateInNewTab engines=\"search,tab,bookmark\"",
+		"# Vomnibar only",
+		"mapkey <c-j:o> <m-j>",
+		"mapkey <c-k:o> <m-k>",
+		"mapkey <c-k:o> <m-k>",
+		"mapkey <c-c:o> <esc>",
+		""
+	],
+	"userDefinedCss": [
+		"/* #omni */",
+		"#bar { background: #00ccbb; }",
+		".item { background: #48324a; }",
+		""
+	],
+	"vimSync": true
+}

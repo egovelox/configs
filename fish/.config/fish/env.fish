@@ -1,3 +1,10 @@
+# on MacOs M1/M2
+if test -d /opt/homebrew/bin
+  append-to-path /opt/homebrew/bin
+end
+if test -d /opt/homebrew/sbin
+  append-to-path /opt/homebrew/sbin
+end
 # to add brew installed packages
 # on Linux
 if test -d /home/linuxbrew/.linuxbrew/bin
@@ -31,7 +38,7 @@ end
 if test -d $HOME/Library/pnpm
   append-to-path $HOME/Library/pnpm/global
 
-  set -gx PNPM_HOME "/Users/maxime.richard/Library/pnpm"
+  set -gx PNPM_HOME "$HOME/Library/pnpm"
   if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
   end

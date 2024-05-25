@@ -1,41 +1,37 @@
 #####################################################
-# FISH ALIASES
+# BASIC ALIASES
 #####################################################
   alias ls='exa -ahl --time-style long-iso --color automatic --no-user'
   alias ll='/bin/ls -alG'
   alias lsr='/bin/ls'
-
-  #alias vim='$HOME/Downloads/PROG/nvim-macos/bin/nvim'
   alias vim='nvim'
-
   alias fishconf='vim $HOME/.config/fish/config.fish'
-
-  #alias dev='cd $HOME/DEV'
   alias dev='cd "$(find $HOME/DEV -maxdepth 1 -type d -print | fzf-tmux -p -- --delimiter / --with-nth -1 --border-label=DEV)" && nvim .'
-  alias devi='nvim +"MruRepos"'
-  alias devi2='set API_DIR $HOME/DEV/$(/bin/ls $HOME/DEV | fzf-tmux -p 30% -- --prompt "Open project: " --no-bold --layout=reverse --height 50% --margin 0% --no-separator --no-info --black --color bg+:black,hl:reverse,hl+:reverse,gutter:black) && cd $API_DIR && vim $API_DIR'
+  alias py="python3"
+  alias ed="bass source $HOME/bin/edit_dev_files.sh"
 
-  alias news='newsboat --config-file .config/newsboat/config --url-file $HOME/.newsboat/urls'
 
-  alias fbuild='$HOME/bin/trigger_jenkins_build.sh'
-  alias fdat='hfactory database connect -i'
-  alias flog='hfactory logs preview -m'
-
+#####################################################
+# OTHER CONVENIENT ALIASES
+#####################################################
+# Challenge ecoCode
+  alias ecoc='cd $HOME/DEV/fabernovel/ecoCode'
+# SSH
+  alias fedor="ssh -i "$HOME/.ssh/fedor" -p8887 cuncdev@192.168.2.203"
+  alias fedor_r="ssh -i "$HOME/.ssh/fedor" -p8887 cuncdev@78.194.17.20"
+# TMUX
+  alias ss='tmux list-windows -a | cut -d" " -f1,2 | while read line; echo $line | sed -e "s/: / /" -e "s/+/ /g" ; end | fzf-tmux -p 30% -- --prompt "switch window: " --no-bold --layout=reverse --height 50% --margin 0% --no-separator --no-info --black --color bg+:black,hl:reverse,hl+:reverse,gutter:black | cut -d " " -f1 | xargs tmux switch -t'
+# WEECHAT
   alias hot="weechat-hotlist-rs"
   alias hotclear="weechat-hotlist-rs clear"
   alias hotlist="weechat-hotlist-rs hotlist -f detailed | jq"
+# HFACTORY
+  alias fbuild='$HOME/bin/trigger_jenkins_build.sh'
+  alias fdat='hfactory database connect -i'
+  alias flog='hfactory logs preview -m'
+# NEWSBOAT
+  alias news='newsboat --config-file .config/newsboat/config --url-file $HOME/.newsboat/urls'
+# NVIM
+ alias devi='nvim +"MruRepos"'
 
-  alias ss='tmux list-windows -a | cut -d" " -f1,2 | while read line; echo $line | sed -e "s/: / /" -e "s/+/ /g" ; end | fzf-tmux -p 30% -- --prompt "switch window: " --no-bold --layout=reverse --height 50% --margin 0% --no-separator --no-info --black --color bg+:black,hl:reverse,hl+:reverse,gutter:black | cut -d " " -f1 | xargs tmux switch -t'
-  
-  alias tsm="transmission-remote"
-  alias tsmd="transmission-daemon"
 
-  alias importbkms="$HOME/.config/bkms/bin/insert_latest.sh"
-  alias syncbkms="$HOME/bin/sync_bkms.sh" 
-
-  alias fedor="ssh -i "$HOME/.ssh/fedor" -p8887 cuncdev@192.168.2.203"
-  alias fedor_r="ssh -i "$HOME/.ssh/fedor" -p8887 cuncdev@78.194.17.20"
-
-  alias py="python3"
-  alias ed="bass source $HOME/bin/edit_dev_files.sh"
-  alias bk="bkmr search -o --json | jq -r '.[] | \" \(.tags) :::: \(.metadata) :::: \(.URL)\"' | fzf-tmux -p 80% --delimiter '::::' -i --with-nth 1,2 --bind \"enter:execute(open {3})+accept\" --color='hl:222' > /dev/null"

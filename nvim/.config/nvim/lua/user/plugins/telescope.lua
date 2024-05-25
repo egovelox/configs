@@ -1,7 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    version = '0.1.4',
+    version = '0.1.8',
     dependencies = {
         {'nvim-lua/popup.nvim'},
         {'nvim-lua/plenary.nvim'},

@@ -1,7 +1,13 @@
 return {
-  "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
   {
-    "Mofiqul/vscode.nvim",
+    "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
+  },
+  {
+    'stevearc/dressing.nvim',
+    event = "VeryLazy"
+  },
+  {
+    "Mofiqul/vscode.nvim", -- A colorscheme inspired by vscode original dark theme
     priority = 1000,
     commit = "0597386",
     config = function()
@@ -32,7 +38,7 @@ return {
       vs.load()
 
     end
-  }, -- A colorscheme inspired by vscode original dark theme
+  },
   {
     "sunjon/shade.nvim",
     event = "VeryLazy",

@@ -1,4 +1,4 @@
-# This file is a .tpl file : 
+# This file is a .tpl file :
 # You must copy it
 # adding the missing variables if needed
 # into

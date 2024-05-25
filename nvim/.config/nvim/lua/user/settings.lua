@@ -15,7 +15,7 @@ vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.smarttab = true
 vim.o.softtabstop = -1
-
+vim.o.updatetime=200
 vim.o.splitbelow = true
 vim.o.splitright = true
 

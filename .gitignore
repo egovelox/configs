@@ -1,4 +1,5 @@
-secure/
+fish/.config/fish/fish_variables
 fish/.config/fish/completions/
 fish/.config/fish/sec_env.fish
+secure/
 tmux/.tmux/plugins/

@@ -85,10 +85,18 @@ starship init fish | source
 #####################################################
 
 set -xg LESS "-SRXF"
-set -xg BKMR_DB_URL "$HOME/.config/bkms/bkmr.db"
-set -xg BKMR_FZF_OPTS "--reverse --height 50% --show-tags"
-set -xg HELIX_RUNTIME "$HOME/DEV/rust/helix/runtime"
+set -xg HOMEBREW_AUTOREMOVE 1
 
+# for deno build from source
+# brew install llvm
+# fish_add_path /opt/homebrew/opt/llvm/bin
+
+# for v8
+# fish_add_path "$HOME/DEV/v8/depot_tools"
+
+# for rbenv (MHP iOS build)
+# fish_add_path $HOME/.rbenv/bin
+# rbenv init - | source
 
 #####################################################
 end

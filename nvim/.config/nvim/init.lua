@@ -1,5 +1,5 @@
-require('user.settings')
-require('user.mappings')
-require('user.lazy')
-require('user.lsp')
-require('user.autocmd')
+require 'user.settings'
+require 'user.mappings'
+require 'user.utils.load_lazy'
+require 'user.lsp'
+require 'user.autocmd'

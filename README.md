@@ -1,3 +1,3 @@
 # configs
 
-see various branches, mapped to various devices
+Dotfiles, synchronized with stow ;)

@@ -4,7 +4,7 @@
     co = checkout
     branches = branch --all
     cof = !git branch --all | fzf | xargs git checkout
-    pulreb = pull --rebase
+    pur = pull --rebase
 [core]
 	excludesfile = ~/.gitignore_global
 [push]

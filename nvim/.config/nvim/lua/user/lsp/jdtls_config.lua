@@ -12,16 +12,16 @@ local function setup()
     print "failed to load jdtls.setup"
     return
   end
-  
+
   local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
   if not status_cmp_ok then
     print "failed to load cmp_nvim_lsp"
     return
   end
-  
+
   -- Determine OS
   local home = os.getenv "HOME"
-  
+
   if fn.has "mac" == 1 then
     WORKSPACE_PATH = home .. "/workspace/"
     CONFIG = "mac"
@@ -31,30 +31,30 @@ local function setup()
   else
     print "Unsupported system"
   end
-  
+
   local project_name = fn.fnamemodify(fn.getcwd(), ":p:h:t")
-  
+
   local workspace_dir = WORKSPACE_PATH .. project_name
-  
+
   -- Find root of project
   local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
   local root_dir = jdtls_setup.find_root(root_markers)
   if root_dir == "" then
     return
   end
-  
+
   local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  
+
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
     vim.keymap.set('n', '<Leader>h', vim.lsp.buf.hover, bufopts)
     -- use telescope instead
     -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    -- vim.keymap.set('n', '<Leader>gd', vim.lsp.buf.definition, bufopts)
+    -- vim.keymap.set('n', '<Leader>gr', vim.lsp.buf.references, bufopts)
     -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
     -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -97,14 +97,15 @@ local function setup()
       fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
       "-configuration",
       home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. CONFIG,
-      "-data","/Users/maxime.richard/workspace",
+      "-data",
+      home .. "/workspace",
     },
-  
+
     on_attach = on_attach,
     capabilities = capabilities,
     -- One dedicated LSP server & client will be started per unique root_dir
     root_dir = root_dir,
-  
+
     -- Here you can configure eclipse.jdt.ls specific settings
     -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
     -- or https://github.com/redhat-developer/vscode-java#supported-vs-code-settings
@@ -121,7 +122,7 @@ local function setup()
           }
         }
       }
-    },  
+    },
     init_options = {
       bundles = {},
       extendedClientCapabilities = extendedClientCapabilities,

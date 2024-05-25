@@ -47,13 +47,7 @@ return {
     -- does not work with lazy = true, because of weird Vim Script syntax inside the plugin
     lazy = false,
     keys = {
-      {'<Leader>gb', ':ToggleBlameLine<CR>'},
-    }
-  },
-  {
-    "tpope/vim-fugitive",
-    keys = {
-      { '<C-g>', ':Git<CR>' }
+      {'<Leader>gl', ':ToggleBlameLine<CR>'},
     }
   },
   {
@@ -68,5 +62,11 @@ return {
       -- color red for removed lines
       vim.cmd [[hi diffRemoved term=None guifg=#a63d62 ctermbg=111]]
     end
+  },
+  {
+    "tpope/vim-fugitive",
+    keys = {
+      { '<C-g>', ':Git<CR>' }
+    }
   },
 }

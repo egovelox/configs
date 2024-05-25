@@ -11,4 +11,3 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     border = _border
   }
 )
-

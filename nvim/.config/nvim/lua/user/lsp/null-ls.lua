@@ -17,6 +17,11 @@ local opts = {
     null_ls.builtins.diagnostics.mypy,
     null_ls.builtins.diagnostics.ruff,
   },
+  -- for C
+  -- no need to use anything, as clang-format is already used with clangd ( C lsp server )
+  -- so the problem is that if you need a BufWritePre autocmd, you need to create it outside of null-ls
+  --
+  -- On attach callback :
   on_attach = function(_, bufnr)
     if true then
       vim.api.nvim_clear_autocmds({
