@@ -43,6 +43,10 @@ MEMO CTRL                                                 *memo_ctrl*
 <Ctrl-o>    [Jump] jump to previous position
 <Ctrl-i>    [Jump] jump to next position
 
+<Ctrl-n>    [Matchup] Jump to start of next block
+<Ctrl-p>    [Matchup] Jump to start of previous block
+<Ctrl-u>    [Matchup] Change all inside block
+
 ==============================================================================
 MEMO VARIA                                                 *memo_varia*
 
