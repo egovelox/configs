@@ -5,6 +5,9 @@ return {
     config = function ()
       local configs = require("nvim-treesitter.configs")
       configs.setup({
+        matchup = {
+          enable = true,              -- mandatory, false will disable the whole vim-matchup extension
+        },
         auto_install = true,
         ensure_installed = {
           "typescript",
