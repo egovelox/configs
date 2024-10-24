@@ -33,5 +33,3 @@
   alias news='newsboat --config-file .config/newsboat/config --url-file $HOME/.newsboat/urls'
 # NVIM
  alias devi='nvim +"MruRepos"'
-
-

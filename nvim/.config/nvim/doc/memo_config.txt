@@ -13,6 +13,8 @@ Open this help with <Leader>mo
 MEMO LEADER                                                 *memo_leader*
 
 <Leader>0   Alternate Buffer
+<Leader>zi  Zoom in pane
+<Leader>zo  Zoom out pane
 
 <Leader>o   [Telescope] recently open files
 <Leader>i   [Telescope] livegrep files
@@ -35,13 +37,23 @@ MEMO LEADER                                                 *memo_leader*
 <Leader>gl  [Nvim-blame-line] Toggle blame line
 
 <Leader>Backspace   Toggle nvim tree
+      
+<Leader>pa  [Harpoon] Display files
+<Leader>ph  [Harpoon] Display files with Telescope
+<Leader>pn  [Harpoon] Add new file to harpoon
+<Leader>pk  [Harpoon] Switch up
+<Leader>pj  [Harpoon] Switch down
 
 
 ==============================================================================
 MEMO CTRL                                                 *memo_ctrl*
 
+<Ctrl-g>    [Git Fugitive] show Fugitive status
+
 <Ctrl-o>    [Jump] jump to previous position
 <Ctrl-i>    [Jump] jump to next position
+
+<Ctrl-v>    [Selection] select vertically
 
 <Ctrl-n>    [Matchup] Jump to start of next block
 <Ctrl-p>    [Matchup] Jump to start of previous block
@@ -50,7 +62,11 @@ MEMO CTRL                                                 *memo_ctrl*
 ==============================================================================
 MEMO VARIA                                                 *memo_varia*
 
-I           [NvimTree] Normal mode, toggle .gitignore files
+:reg        [Registers] Display registers
+""p         [Registers] Paste from register "
+"ay         [Registers] Yank to register a
+"ap         [Registers] Paste from register a
+
 H           [NvimTree] Normal mode, toggle dotfiles
 
 za          [Ufo] Toggle a fold
@@ -64,17 +80,29 @@ MEMO TMUX                                                 *memo_tmux*
 
 Prefix as P
 
+P h     [Help] Display help
 P a     [Window]  switch to last window
 P L     [Session] switch to last session
 P s:new [Session] Create new session
 P $     [Session] Change current session name
 
+P space [Thumbs] Display thumbs
+
 P &     [Window] Kill and close
 
-Other keybindings witch Command as C
+2nd Prefix ( Ctrl-S ) as S
+
+S s     [Session] display sessions
+S h     [Window] next left
+S l     [Window] next right
+S j     [Pane]   next bottom 
+S k     [Pane]   next top 
+S N     [Pane]   new horizontal pane 
+S o     [Pane]   toggle full-screen current pane
+
+Other keybindings with Command as C
 
 C T     [Window] New window
-C H,L   [Window] Switch left or right
 C ]     [Window] Vim editing-mode - q to exit
 C A     [Window] Switch window to last used
 C S     [Window] Switch window via fzf

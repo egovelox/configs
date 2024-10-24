@@ -40,19 +40,6 @@ return {
     end
   },
   {
-    "sunjon/shade.nvim",
-    event = "VeryLazy",
-    opts = {
-      overlay_opacity = 65,
-      opacity_step = 10,
-      keys = {
-        brightness_up    = '<C-Up>',
-        brightness_down  = '<C-Down>',
-        toggle           = '<Leader>s',
-      }
-    },
-  },
-  {
     "machakann/vim-highlightedyank",
     init = function()
       vim.g.highlightedyank_highlight_in_visual = 0

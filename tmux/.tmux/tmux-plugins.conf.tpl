@@ -14,6 +14,14 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 
+# https://github.com/fcsonline/tmux-thumbs
+# needs to install first, then compile rust executable with: cargo build --release
+set -g @plugin 'fcsonline/tmux-thumbs'
+run-shell ~/.tmux/plugins/tmux-thumbs/tmux-thumbs.tmux
+set -g @thumbs-command 'echo -n {} | pbcopy'
+set -g @thumbs-upcase-command 'echo -n {} | pbcopy'
+set -g @thumbs-contrast 1
+
 set -g @sysstat_mem_view_tmpl '#{mem.used} / #{mem.total}'
 
 
