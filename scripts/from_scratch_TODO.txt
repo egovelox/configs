@@ -1,3 +1,2 @@
 [MacOS] Test that cask fonts works
 [Linux] Brew cannot install casks : alacritty, fonts => make distinct Brewfiles
-[All] Install tmux tpm with brew
