@@ -9,7 +9,7 @@
 [vim]           %s/`\(.*\)`/[\1](Fighting-\1-Kirby)
 [dev]           search files [ed]
 [tmux - fzf]    kill window [C-s x]
-[tmux - fzf]    switch window [C-s s]
+[tmux]          switch window or session [C-s s]
 [tmux]          create session cmd [tmux new -s my-session]
 [tmux]          rename session cmd [tmux rename-session -t my-session my-renamed]
 [tmux]          create window [C-a c]
@@ -22,4 +22,4 @@
 [tmux]          vi mode [C-s d]
 [tmux]          reload config [C-a r]
 [alacritty]     click url [Cmd+Shift click]
-[vim harpoon]       leader p a/n/h/k/j
+[vim harpoon]   leader p a/n/h/k/j
