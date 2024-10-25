@@ -4,10 +4,10 @@ if status is-interactive
 set -gx EDITOR "nvim"
 
 #####################################################
-
-# When Karabiner is missing
+# Vim-like keys
 bind \ck history-search-backward
 bind \cj history-search-forward
+
 #####################################################
 # IMPORT FILES
 #####################################################
@@ -32,20 +32,15 @@ set -xg OBJC_DISABLE_INITIALIZE_FORK_SAFETY "YES"
 
 if test -d $HOME/.jabba
   source $HOME/.jabba/jabba.fish
-  jabba use openjdk@1.11.0
+  jabba use openjdk@1.17.0
 end
 
-
-
-if test -d $HOME/apache-maven-3.6.3
-  set -g -x M2_HOME $HOME/apache-maven-3.6.3
-end
 #####################################################
 # FZF
 #####################################################
 
-set -g -x FZF_DEFAULT_COMMAND fd --type f --hidden --follow --exclude /.git
-set -g -x FZF_DEFAULT_OPTS -i --cycle --black --ansi --color=fg:246,fg+:150,bg+:black --no-bold --no-hscroll --layout=reverse --bind change:first --height 50% --no-separator --border=bold  --padding 7%
+set -gx FZF_DEFAULT_COMMAND fd --type f --hidden --follow --exclude /.git
+set -gx FZF_DEFAULT_OPTS -i --cycle --black --ansi --color=fg:246,fg+:150,bg+:black --no-bold --no-hscroll --layout=reverse --bind change:first --height 50% --no-separator --border=bold  --padding 7%
 
 #####################################################
 # FNM
@@ -100,5 +95,3 @@ set -xg HOMEBREW_AUTOREMOVE 1
 
 #####################################################
 end
-
-
