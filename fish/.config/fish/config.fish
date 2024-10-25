@@ -7,6 +7,12 @@ set -gx EDITOR "nvim"
 # Vim-like keys
 bind \ck history-search-backward
 bind \cj history-search-forward
+for mode in insert default visual
+  bind -M $mode \cf forward-char
+  bind -M $mode \ck history-search-backward
+  bind -M $mode \cj history-search-forward
+end
+set -g fish_key_bindings fish_vi_key_bindings
 
 #####################################################
 # IMPORT FILES
