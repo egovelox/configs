@@ -14,6 +14,8 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 
+set -g @plugin 'tassaron/tmux-df'
+
 # https://github.com/fcsonline/tmux-thumbs
 # needs to install first, then compile rust executable with: cargo build --release
 set -g @plugin 'fcsonline/tmux-thumbs'
