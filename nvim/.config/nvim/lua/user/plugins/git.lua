@@ -65,8 +65,9 @@ return {
   },
   {
     "tpope/vim-fugitive",
+    cmd = "Git",
     keys = {
-      { '<C-g>', ':Git<CR>' }
+      { '<C-g>', ':15 split | Gedit:<CR>' },
     }
   },
 }
