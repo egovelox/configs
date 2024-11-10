@@ -6,7 +6,7 @@
   alias lsr='/bin/ls'
   alias vim='nvim'
   alias fishconf='vim $HOME/.config/fish/config.fish'
-  alias dev='cd "$(find $HOME/DEV -maxdepth 1 -type d -print | fzf-tmux -p -- --delimiter / --with-nth -1 --border-label=DEV)" && nvim .'
+  alias dev='cd "$(find $HOME/DEV $HOME/DEV/{fabernovel,exo,deno,rust,golang,C,python,zig,mdn,aws} -maxdepth 1 -type d -print | fzf-tmux -p -- --delimiter / --with-nth -1 --border-label=DEV)" && nvim .'
   alias py="python3"
   alias ed="bass source $HOME/bin/edit_dev_files.sh"
 
