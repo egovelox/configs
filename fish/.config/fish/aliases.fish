@@ -22,9 +22,9 @@
 # TMUX
   alias ss='tmux list-windows -a | cut -d" " -f1,2 | while read line; echo $line | sed -e "s/: / /" -e "s/+/ /g" ; end | fzf-tmux -p 30% -- --prompt "switch window: " --no-bold --layout=reverse --height 50% --margin 0% --no-separator --no-info --black --color bg+:black,hl:reverse,hl+:reverse,gutter:black | cut -d " " -f1 | xargs tmux switch -t'
 # WEECHAT
-  alias hot="weechat-hotlist-rs"
-  alias hotclear="weechat-hotlist-rs clear"
-  alias hotlist="weechat-hotlist-rs hotlist -f detailed | jq"
+  alias hot="slackrope"
+  alias hotclear="slackrope clear"
+  alias hotlist="slackrope hotlist -f detailed | jq"
 # HFACTORY
   alias fbuild='$HOME/bin/trigger_jenkins_build.sh'
   alias fdat='hfactory database connect -i'

@@ -1,4 +1,5 @@
 [tmux]          this help [C-a h]
+[brew]          faster [ HOMEBREW_NO_AUTO_UPDATE=1 brew install ... ]
 [firefox]       switch tab [C-s f, ffs]
 [firefox]       close tab [Cmd-W] or [x]
 [firefox]       last tab [Cmd-9]
