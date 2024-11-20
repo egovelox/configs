@@ -2,6 +2,8 @@
 # OTHER SETTINGS
 ########################################
 
+set -g default-terminal "tmux-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
 # default shell
 set -g default-shell ${BREW_PATH}/bin/fish
 
