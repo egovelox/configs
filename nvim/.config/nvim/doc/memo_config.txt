@@ -44,6 +44,11 @@ MEMO LEADER                                                 *memo_leader*
 <Leader>pk  [Harpoon] Switch up
 <Leader>pj  [Harpoon] Switch down
 
+<Leader>gis [Diffview] DiffviewOpen
+<Leader>gib [Diffview] Telescope git_branches
+<Leader>gic [Diffview] Telescope git_commits
+<Leader>b   [Diffview] Toggle the file panel
+g<C-x>      [Diffview] Cycle layout
 
 ==============================================================================
 MEMO CTRL                                                 *memo_ctrl*
@@ -62,6 +67,8 @@ MEMO CTRL                                                 *memo_ctrl*
 ==============================================================================
 MEMO VARIA                                                 *memo_varia*
 
+gt/gT       [Tabs] Go to next/previous tab
+gf          [DiffView] Open the diff file in the previous tab
 :reg        [Registers] Display registers
 ""p         [Registers] Paste from register "
 "ay         [Registers] Yank to register a

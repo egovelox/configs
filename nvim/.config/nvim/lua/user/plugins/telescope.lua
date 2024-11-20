@@ -9,8 +9,10 @@ return {
         {"nvim-telescope/telescope-live-grep-args.nvim"},
         {'nvim-telescope/telescope-symbols.nvim'},
     },
+    lazy = false,
     config = function()
       local actions = require('telescope.actions')
+      local action_state = require "telescope.actions.state"
 
       require('telescope').setup{
         defaults = {
@@ -46,7 +48,37 @@ return {
         pickers = {
           find_files = {
             theme = 'dropdown',
-          }
+          },
+          git_commits = {
+            theme = 'dropdown',
+            previewer = false,
+            mappings = {
+              i = {
+                ["<CR>"] = function(prompt_bufnr)
+                  actions.close(prompt_bufnr)
+                  local value = action_state.get_selected_entry(prompt_bufnr).value
+                  vim.cmd('DiffviewOpen ' .. value .. '~1..' .. value)
+                end,
+              }
+            }
+          },
+          git_branches = {
+            theme = 'dropdown',
+            previewer = false,
+            mappings = {
+              i = {
+                ["<CR>"] = function(prompt_bufnr)
+                  actions.close(prompt_bufnr)
+                  local value = action_state.get_selected_entry(prompt_bufnr).value
+                  -- we compare branch X with HEAD i.e our current branch
+                  -- we use ... because we want our comparaison to be based on a shared commit :
+                  -- the branch X commit that our branch also contains
+                  -- If we would use .. we would compare branch X tip with our current branch tip.
+                  vim.cmd('DiffviewOpen ' .. value .. '...HEAD')
+                end,
+              }
+            }
+          },
         },
       }
       require("telescope").load_extension("fzf")
@@ -57,6 +89,8 @@ return {
       {'<leader>j',':Telescope jumplist<cr>'},
       {'<leader>gd',':Telescope lsp_definitions<cr>'},
       {'<leader>gr',':Telescope lsp_references<cr>'},
+      {'<leader>gib',':Telescope git_branches<cr>'},
+      {'<leader>gic',':Telescope git_commits<cr>'},
     }
   },
 }

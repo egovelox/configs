@@ -34,7 +34,6 @@ return {
           lualine_c = {
             { 'filename' }
           },
-          --lualine_x = {'encoding', 'fileformat', "require'lsp-status'.status()", 'filetype'},
           lualine_y = {'progress'},
           lualine_z = {'location'}
         },
@@ -61,6 +60,36 @@ return {
       vim.cmd [[hi diffAdded term=None guifg=#88b8f6 ctermfg=111]]
       -- color red for removed lines
       vim.cmd [[hi diffRemoved term=None guifg=#a63d62 ctermbg=111]]
+    end
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    keys = {
+      { '<Leader>gii', ':Gitsigns<CR>' },
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  },
+  {
+    "sindrets/diffview.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "lewis6991/gitsigns.nvim",
+    },
+    lazy = false, -- DiffView-- commands should be available at start
+    keys = {
+      { '<Leader>gis', ':DiffviewOpen<CR>' },
+    },
+    config = function()
+      require("diffview").setup({
+        file_panel = {
+          win_config = {                      -- See |diffview-config-win_config|
+            position = "bottom",
+            height = 16,
+          },
+        },
+    })
     end
   },
   {
