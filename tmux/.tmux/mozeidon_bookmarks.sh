@@ -1,7 +1,7 @@
 #!/bin/bash
 /opt/homebrew/bin/mozeidon bookmarks -t \
   '{{range .Items}}{{.Url}} 🦊 {{.Title}} {{.Parent}} {{"\u001b[38;5;109m"}} {{.Url}}{{"\033[0m"}}{{"\n"}}{{end}}'\
-  | fzf-tmux -p 60% -- \
+  | fzf-tmux -p 80% -- \
   --border-label=BOOKMARKS \
   --no-bold \
   --layout=reverse \

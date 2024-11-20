@@ -1,7 +1,7 @@
 #!/bin/bash
 /opt/homebrew/bin/mozeidon tabs get -t \
   '{{range .Items}}{{.WindowId}}:{{.Id}} {{.Url}} {{if .Pinned}}📌{{else}}🦊{{end}} {{"\u001b[38;5;109m"}}  {{.Domain}}{{"\033[0m"}}  {{.Title}}{{"\n"}}{{end}}'\
-  | fzf-tmux -p 60% -- \
+  | fzf-tmux -p 80% -- \
   --border-label=TABS \
   --no-bold \
   --layout=reverse \
@@ -18,8 +18,9 @@
   --bind="ctrl-o:print-query" \
   --header-first \
   --color=header:#5e6b6b \
-  '--header=close tab(s) [C-p] 
+  '--header=close tab(s) [C-p] (multi-select with tab)
 open new tab [C-o]'\
+  '--query=gitlab'\
   | grep -v "[🦊📌]" \
   | xargs -r -I {} sh -c '/opt/homebrew/bin/mozeidon tabs new "{}" && open -a firefox'
 
