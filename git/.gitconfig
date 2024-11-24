@@ -1,5 +1,5 @@
 [alias]
-    logline = log --graph --pretty=format:'%C(bold cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ll = log --graph --pretty=format:'%C(bold cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     stt = status
     co = checkout
     branches = branch --all

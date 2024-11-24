@@ -88,11 +88,10 @@ starship init fish | source
 set -xg LESS "-SRXF"
 set -xg HOMEBREW_AUTOREMOVE 1
 
-# for deno build from source
+# for deno rusty-v8
+# @see https://fresh.egovelox.com/posts/shenanigans/deno-v8
 # brew install llvm
 # fish_add_path /opt/homebrew/opt/llvm/bin
-
-# for v8
 # fish_add_path "$HOME/DEV/v8/depot_tools"
 
 # for rbenv (MHP iOS build)
