@@ -1,32 +1,20 @@
 [alias]
-    ll = log --graph --pretty=format:'%C(bold cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    stt = status
-    co = checkout
-    branches = branch --all
-    # use fzf-tmux to checkout branch or delete branch(es)
-    cof = !git branch --all | grep -v -E '^\\*|remotes' | fzf-tmux -p 80% -- \
-    --border-label='GIT BRANCHES' \
-    --header-first \
-    --header='✅[Enter] git checkout \n❌[C-d]   git branch -D\n👋[C-c]   exit\n\n' \
-    --color=header:gray \
-    --no-bold \
-    --layout=reverse \
-    --margin 0% \
-    --no-separator \
-    --no-info \
-    --black \
-    --color bg+:black,hl:reverse,hl+:reverse,gutter:black \
-    --multi \
-    --marker=❌ \
-    --with-nth 1 \
-    --bind='enter:accept+execute(git checkout {1})' \
-    --bind='ctrl-d:accept-non-empty+execute(git branch -D {+1})'
-    pur = pull --rebase
-[core]
-	excludesfile = ~/.gitignore_global
+  ll = log --graph --pretty=format:'%C(bold cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  stt = status
+  co = checkout
+  branches = branch --all
+  # use fzf-tmux to checkout branch or delete branch(es)
+  cof = !git_cof.sh
+  hmr = !git_hmr.sh
+  pur = pull --rebase
 [push]
 	autoSetupRemote = true
 [fetch]
 	prune = true
 [commit]
 	template = ~/.git_hfactory_template
+[user]
+	name = egovelox
+	email = egovelox@protonmail.com
+[pull]
+	rebase = true
