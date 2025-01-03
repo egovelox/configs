@@ -1,19 +1,18 @@
-# Commands to run in interactive sessions can go here
 if status is-interactive
-
-set -gx EDITOR "nvim"
+  set -gx EDITOR "nvim"
 
 #####################################################
 # Vim-like keys
-bind \ck history-search-backward
-bind \cj history-search-forward
-for mode in insert default visual
-  bind -M $mode \cf forward-char
-  bind -M $mode \ck history-search-backward
-  bind -M $mode \cj history-search-forward
-end
-set -g fish_key_bindings fish_vi_key_bindings
+  bind \ck history-search-backward
+  bind \cj history-search-forward
+  for mode in insert default visual
+    bind -M $mode \cf forward-char
+    bind -M $mode \ck history-search-backward
+    bind -M $mode \cj history-search-forward
+  end
+  set -g fish_key_bindings fish_vi_key_bindings
 
+end
 #####################################################
 # IMPORT FILES
 #####################################################
@@ -38,7 +37,9 @@ set -xg OBJC_DISABLE_INITIALIZE_FORK_SAFETY "YES"
 
 if test -d $HOME/.jabba
   source $HOME/.jabba/jabba.fish
-  jabba use openjdk@1.17.0
+  if status is-interactive
+    jabba use openjdk@1.17.0
+  end
 end
 
 #####################################################
@@ -53,7 +54,9 @@ set -gx FZF_DEFAULT_OPTS -i --cycle --black --ansi --color=fg:246,fg+:150,bg+:bl
 #####################################################
 
 set -g -x FNM_DIR $HOME/.fnm
-fnm env --use-on-cd | source
+  if status is-interactive
+    fnm env --use-on-cd --version-file-strategy recursive | source
+  end
 
 #####################################################
 # Pyenv
@@ -64,8 +67,10 @@ fnm env --use-on-cd | source
 
 set -g -x PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
-pyenv init - | source
-
+  if status is-interactive
+    pyenv init - | source
+    pyenv shell 3.9.6
+  end
 #####################################################
 # GREETING
 #####################################################
@@ -78,7 +83,9 @@ set -g -x fish_greeting '🐟'
 ####################################################
 
 # for starship
-starship init fish | source
+  if status is-interactive
+    starship init fish | source
+  end
 
 
 #####################################################
@@ -99,4 +106,3 @@ set -xg HOMEBREW_AUTOREMOVE 1
 # rbenv init - | source
 
 #####################################################
-end
