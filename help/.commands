@@ -1,4 +1,7 @@
 [tmux]          this help [C-a h]
+[notes]         open new note [notes n folder/note_name]
+[notes]         edit note     [notes o folder/note_name]
+[notes]         search notes  [notes s keyword]
 [firefox]       switch tab [C-s f, ffs]
 [firefox]       close tab [Cmd-W] or [x]
 [firefox]       last tab [Cmd-9]
@@ -24,4 +27,9 @@
 [tmux]          reload config [C-a r]
 [alacritty]     click url [Cmd+Shift click]
 [vim harpoon]   leader p a/n/h/k/j
+[vim diag]      show diag [ leader e ]
+[vim diag]      next diag [ leader ]d ]
+[vim diag]      prev diag [ leader [d ]
+[vim diff]      show diff HEAD [ leader gis ]
+[vim diff]      choose diff branch [ leader gib ]
 [brew]          faster [ HOMEBREW_NO_AUTO_UPDATE=1 brew install ... ]
