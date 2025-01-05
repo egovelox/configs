@@ -9,7 +9,7 @@ return {
   {
     "Mofiqul/vscode.nvim", -- A colorscheme inspired by vscode original dark theme
     priority = 1000,
-    commit = "0597386",
+    commit = "18097b7",
     config = function()
       local vs = require('vscode')
       local c = require('vscode.colors').get_colors()

@@ -4,8 +4,9 @@
 
 set -g default-terminal "tmux-256color"
 set -ag terminal-overrides ",xterm-256color:RGB"
-# default shell
-set -g default-shell ${BREW_PATH}/bin/fish
+
+# default shell ( keep it here in case we need to uncomment it )
+# set -g default-shell ${BREW_PATH}/bin/fish
 
 # helps in faster key repetition Avoid ESC delay
 set -sg escape-time 0
