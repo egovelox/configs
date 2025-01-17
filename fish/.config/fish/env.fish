@@ -51,3 +51,10 @@ set -l aws "/usr/local/opt/awscli@1"
 if test -d $aws
   append-to-path $aws/bin
 end
+
+# to add dvm ( nvm for deno )
+# https://github.com/justjavac/dvm
+set -l dvm "$HOME/.dvm"
+if test -d $dvm
+  append-to-path $dvm/bin
+end
