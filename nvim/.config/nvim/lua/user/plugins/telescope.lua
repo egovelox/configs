@@ -86,6 +86,7 @@ return {
     end,
     keys = {
       {'<Leader>i', ':Telescope live_grep hidden=true<CR>'},
+      {'<Leader>ri', ':Telescope resume<cr>'},
       {'<leader>j',':Telescope jumplist<cr>'},
       {'<leader>gd',':Telescope lsp_definitions<cr>'},
       {'<leader>gr',':Telescope lsp_references<cr>'},
